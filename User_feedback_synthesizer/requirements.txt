@@ -1,0 +1,17 @@
+# User Feedback Synthesizer - Dependencies
+# HackwithHyderabad 3.0
+
+pydantic>=2.7.0
+fastapi>=0.111.0
+uvicorn>=0.30.0
+streamlit>=1.35.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+httpx>=0.27.0
+python-dotenv>=1.0.1
+rich>=13.7.0
+
+# Optional: official Hindsight client when running against live Hindsight daemon
+# pip install hindsight-client
+

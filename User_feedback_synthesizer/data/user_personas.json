@@ -1,0 +1,43 @@
+[
+  {
+    "account_id": "acc_acme_corp",
+    "name": "Acme Global",
+    "tier": "Enterprise Tier 1",
+    "arr": 120000,
+    "user_count": 350,
+    "primary_contact": "Sarah Jenkins (VP of Engineering)",
+    "auth_method": "Okta SAML SSO",
+    "primary_use_case": "Architecture diagrams and cross-team sprint mapping"
+  },
+  {
+    "account_id": "acc_finovate",
+    "name": "Finovate Systems",
+    "tier": "Enterprise Tier 2 (POC)",
+    "arr": 85000,
+    "user_count": 180,
+    "primary_contact": "Rajiv Mehta (Head of IT Security)",
+    "auth_method": "Azure AD SSO",
+    "primary_use_case": "Compliance audit workflows and threat modeling"
+  },
+  {
+    "account_id": "acc_hyperscale",
+    "name": "HyperScale Labs",
+    "tier": "Growth / Team",
+    "arr": 24000,
+    "user_count": 45,
+    "primary_contact": "Elena Rostova (Lead Product Designer)",
+    "auth_method": "Google Workspace SSO",
+    "primary_use_case": "Product design sprints and collaborative wireframing"
+  },
+  {
+    "account_id": "acc_solo_devs",
+    "name": "Community & Indie Pro Cohort",
+    "tier": "Pro Individual",
+    "arr": 15000,
+    "user_count": 520,
+    "primary_contact": "Multiple community champions (@dan_codes, @maya_ux)",
+    "auth_method": "Email / Password / GitHub",
+    "primary_use_case": "Personal flowcharts, mind maps, and freelance deliverables"
+  }
+]
+

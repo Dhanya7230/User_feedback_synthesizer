@@ -1,0 +1,4074 @@
+{
+  "bank_id": "flowpilot-product-bank",
+  "world_facts": {
+    "fact_rel_v2_3_0": {
+      "fact_id": "fact_rel_v2_3_0",
+      "category": "release",
+      "subject": "v2.3.0",
+      "statement": "Release v2.3.0 (Autumn Performance Baseline): Stable baseline release featuring standard canvas rendering, single-threaded export, and legacy session-based authentication. Changes: Optimized database index for project loading; Standard canvas DOM renderer with 60fps cap; Basic PDF and PNG export utilities; Standard cookie session authentication",
+      "verified_at": "2026-10-01 09:00:00+00:00",
+      "source": "changelog.json",
+      "metadata": {
+        "version": "v2.3.0",
+        "release_date": "2026-10-01T09:00:00Z",
+        "title": "Autumn Performance Baseline",
+        "summary": "Stable baseline release featuring standard canvas rendering, single-threaded export, and legacy session-based authentication.",
+        "affected_modules": [
+          "auth",
+          "canvas",
+          "export"
+        ],
+        "changes": [
+          "Optimized database index for project loading",
+          "Standard canvas DOM renderer with 60fps cap",
+          "Basic PDF and PNG export utilities",
+          "Standard cookie session authentication"
+        ],
+        "known_risks": "Canvas performance degrades slightly on boards with >500 elements."
+      },
+      "tags": [
+        "release",
+        "v2.3.0",
+        "auth",
+        "canvas",
+        "export"
+      ]
+    },
+    "fact_rel_v2_4_0": {
+      "fact_id": "fact_rel_v2_4_0",
+      "category": "release",
+      "subject": "v2.4.0",
+      "statement": "Release v2.4.0 (Next-Gen WebWorker Async Canvas Engine): Major architectural overhaul offloading canvas rendering calculations to background WebWorkers for infinite scaling. Changes: Migrated canvas transformation calculations to DedicatedWorkerGlobalScope; Introduced hardware-accelerated WebGL viewport; Added multi-user cursor broadcasting over WebSockets; Redesigned node inspector sidebar",
+      "verified_at": "2026-10-10 14:30:00+00:00",
+      "source": "changelog.json",
+      "metadata": {
+        "version": "v2.4.0",
+        "release_date": "2026-10-10T14:30:00Z",
+        "title": "Next-Gen WebWorker Async Canvas Engine",
+        "summary": "Major architectural overhaul offloading canvas rendering calculations to background WebWorkers for infinite scaling.",
+        "affected_modules": [
+          "canvas",
+          "export",
+          "performance"
+        ],
+        "changes": [
+          "Migrated canvas transformation calculations to DedicatedWorkerGlobalScope",
+          "Introduced hardware-accelerated WebGL viewport",
+          "Added multi-user cursor broadcasting over WebSockets",
+          "Redesigned node inspector sidebar"
+        ],
+        "known_risks": "High memory consumption on prolonged editing sessions if WebGL buffer is not deallocated."
+      },
+      "tags": [
+        "release",
+        "v2.4.0",
+        "canvas",
+        "export",
+        "performance"
+      ]
+    },
+    "fact_rel_v2_4_1": {
+      "fact_id": "fact_rel_v2_4_1",
+      "category": "release",
+      "subject": "v2.4.1",
+      "statement": "Release v2.4.1 (Canvas Memory Hotfix & Auth Refresh Interval Tuning): Emergency hotfix to patch client RAM leaks in WebWorker, along with enterprise SSO token refresh interval adjustments. Changes: Enforced aggressive canvas node garbage collection on zoom/pan; Shortened enterprise Okta/SAML OAuth token refresh check from 4h to 45m; Added memory warning toast when tab exceeds 1.5GB RAM",
+      "verified_at": "2026-10-16 18:00:00+00:00",
+      "source": "changelog.json",
+      "metadata": {
+        "version": "v2.4.1",
+        "release_date": "2026-10-16T18:00:00Z",
+        "title": "Canvas Memory Hotfix & Auth Refresh Interval Tuning",
+        "summary": "Emergency hotfix to patch client RAM leaks in WebWorker, along with enterprise SSO token refresh interval adjustments.",
+        "affected_modules": [
+          "canvas",
+          "auth",
+          "sso"
+        ],
+        "changes": [
+          "Enforced aggressive canvas node garbage collection on zoom/pan",
+          "Shortened enterprise Okta/SAML OAuth token refresh check from 4h to 45m",
+          "Added memory warning toast when tab exceeds 1.5GB RAM"
+        ],
+        "known_risks": "Short token check introduces race condition when multiple tabs renew token concurrently without mutex lock."
+      },
+      "tags": [
+        "release",
+        "v2.4.1",
+        "canvas",
+        "auth",
+        "sso"
+      ]
+    },
+    "fact_rel_v2_4_2": {
+      "fact_id": "fact_rel_v2_4_2",
+      "category": "release",
+      "subject": "v2.4.2",
+      "statement": "Release v2.4.2 (OAuth Mutex Fix & Canvas WebGL Stabilization): Comprehensive stability update resolving OAuth token refresh race conditions and WebGL context loss. Changes: Implemented distributed WebLock/mutex for single-tab OAuth renewal; Fixed GPU buffer deallocation in Canvas worker upon node deletion; Added automatic offline draft persistence if connection drops; Re-enabled high-resolution vector PDF export",
+      "verified_at": "2026-10-24 11:15:00+00:00",
+      "source": "changelog.json",
+      "metadata": {
+        "version": "v2.4.2",
+        "release_date": "2026-10-24T11:15:00Z",
+        "title": "OAuth Mutex Fix & Canvas WebGL Stabilization",
+        "summary": "Comprehensive stability update resolving OAuth token refresh race conditions and WebGL context loss.",
+        "affected_modules": [
+          "auth",
+          "sso",
+          "canvas",
+          "export"
+        ],
+        "changes": [
+          "Implemented distributed WebLock/mutex for single-tab OAuth renewal",
+          "Fixed GPU buffer deallocation in Canvas worker upon node deletion",
+          "Added automatic offline draft persistence if connection drops",
+          "Re-enabled high-resolution vector PDF export"
+        ],
+        "known_risks": "Minimal. Verified in staging across Chrome 124, Safari 18, and Firefox ESR."
+      },
+      "tags": [
+        "release",
+        "v2.4.2",
+        "auth",
+        "sso",
+        "canvas",
+        "export"
+      ]
+    }
+  },
+  "agent_experiences": {
+    "fb_001": {
+      "experience_id": "fb_001",
+      "timestamp": "2026-10-02 10:15:00+00:00",
+      "channel": "discord",
+      "author": "dev_marcus",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Just moved our engineering diagrams over to FlowPilot. The canvas feels super buttery smooth compared to Miro. Great job team!",
+      "sentiment_score": 0.88,
+      "detected_entities": [
+        "canvas",
+        "performance",
+        "praise"
+      ],
+      "tags": [
+        "canvas",
+        "performance",
+        "praise"
+      ],
+      "channel_metadata": {
+        "channel_name": "#general",
+        "reactions": {
+          "rocket": 12,
+          "fire": 8
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_031": {
+      "experience_id": "fb_031",
+      "timestamp": "2026-10-02 16:30:00+00:00",
+      "channel": "reddit",
+      "author": "u/devops_ninja",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Switched from Miro to FlowPilot for Kubernetes topology diagrams. The speed difference is night and day.",
+      "sentiment_score": 0.85,
+      "detected_entities": [
+        "canvas",
+        "performance",
+        "praise"
+      ],
+      "tags": [
+        "canvas",
+        "performance",
+        "praise"
+      ],
+      "channel_metadata": {
+        "subreddit": "r/devops",
+        "upvotes": 67
+      },
+      "linked_release_version": null
+    },
+    "fb_002": {
+      "experience_id": "fb_002",
+      "timestamp": "2026-10-03 14:22:00+00:00",
+      "channel": "in_app_survey",
+      "author": "elena.r@hyperscale.io",
+      "account_id": "acc_hyperscale",
+      "raw_content": "Loving the real-time cursor collaboration. Any plans to add direct Figma frame import? That would cut our handoff time by 50%.",
+      "sentiment_score": 0.75,
+      "detected_entities": [
+        "figma",
+        "integration",
+        "feature_request"
+      ],
+      "tags": [
+        "figma",
+        "integration",
+        "feature_request"
+      ],
+      "channel_metadata": {
+        "nps_score": 9,
+        "role": "Lead Product Designer"
+      },
+      "linked_release_version": null
+    },
+    "fb_027": {
+      "experience_id": "fb_027",
+      "timestamp": "2026-10-03 18:00:00+00:00",
+      "channel": "discord",
+      "author": "chloe_dev",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Can we get Mermaid.js syntax copy-paste support? Would be amazing to turn markdown flowcharts straight into visual boards.",
+      "sentiment_score": 0.6,
+      "detected_entities": [
+        "mermaid",
+        "import",
+        "feature_request"
+      ],
+      "tags": [
+        "mermaid",
+        "import",
+        "feature_request"
+      ],
+      "channel_metadata": {
+        "channel_name": "#ideas",
+        "reactions": {
+          "bulb": 19
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_003": {
+      "experience_id": "fb_003",
+      "timestamp": "2026-10-04 09:40:00+00:00",
+      "channel": "zendesk",
+      "author": "sarah.jenkins@acmeglobal.com",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Hi Support team, our Okta SSO setup went through smoothly for our first 100 seats. Is there an admin endpoint to audit member workspace permissions?",
+      "sentiment_score": 0.65,
+      "detected_entities": [
+        "sso",
+        "rbac",
+        "admin"
+      ],
+      "tags": [
+        "sso",
+        "rbac",
+        "admin"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4102",
+        "priority": "normal",
+        "tier": "Enterprise Tier 1"
+      },
+      "linked_release_version": null
+    },
+    "fb_032": {
+      "experience_id": "fb_032",
+      "timestamp": "2026-10-04 11:00:00+00:00",
+      "channel": "gong",
+      "author": "Elena Rostova",
+      "account_id": "acc_hyperscale",
+      "raw_content": "Transcript snippet: 'Our 45 designers are really enjoying FlowPilot. The shared cursors make design crits lively. If we could get Figma frame sync and role permissions, this will be our default design board.'",
+      "sentiment_score": 0.8,
+      "detected_entities": [
+        "figma",
+        "rbac",
+        "hyperscale",
+        "praise"
+      ],
+      "tags": [
+        "figma",
+        "rbac",
+        "hyperscale",
+        "praise"
+      ],
+      "channel_metadata": {
+        "call_id": "gong_8790",
+        "arr": 24000,
+        "stage": "Customer Success QBR"
+      },
+      "linked_release_version": null
+    },
+    "fb_033": {
+      "experience_id": "fb_033",
+      "timestamp": "2026-10-05 14:15:00+00:00",
+      "channel": "in_app_survey",
+      "author": "sam@fintechhub.com",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Would love an option to export boards to SVG code or embed directly in Notion docs.",
+      "sentiment_score": 0.7,
+      "detected_entities": [
+        "export",
+        "svg",
+        "notion"
+      ],
+      "tags": [
+        "export",
+        "svg",
+        "notion"
+      ],
+      "channel_metadata": {
+        "nps_score": 9,
+        "role": "Product Lead"
+      },
+      "linked_release_version": null
+    },
+    "fb_004": {
+      "experience_id": "fb_004",
+      "timestamp": "2026-10-05 16:05:00+00:00",
+      "channel": "reddit",
+      "author": "u/cloud_architect_mike",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Tried FlowPilot for our AWS architecture review. Cleanest vector export I have seen in a web tool. Zero lag on our 150-node diagram.",
+      "sentiment_score": 0.82,
+      "detected_entities": [
+        "canvas",
+        "export",
+        "performance"
+      ],
+      "tags": [
+        "canvas",
+        "export",
+        "performance"
+      ],
+      "channel_metadata": {
+        "subreddit": "r/cloudengineering",
+        "upvotes": 42
+      },
+      "linked_release_version": null
+    },
+    "fb_005": {
+      "experience_id": "fb_005",
+      "timestamp": "2026-10-06 11:30:00+00:00",
+      "channel": "gong",
+      "author": "Rajiv Mehta",
+      "account_id": "acc_finovate",
+      "raw_content": "Transcript snippet: 'We evaluated Lucidchart and Miro, but FlowPilot's speed in initial testing looks very promising for our 180 IT security staff. If SSO and compliance controls hold up during the 30-day POC, we are ready to sign an $85k annual deal.'",
+      "sentiment_score": 0.78,
+      "detected_entities": [
+        "sales_pipeline",
+        "sso",
+        "security"
+      ],
+      "tags": [
+        "sales_pipeline",
+        "sso",
+        "security"
+      ],
+      "channel_metadata": {
+        "call_id": "gong_8821",
+        "arr": 85000,
+        "stage": "Security POC"
+      },
+      "linked_release_version": null
+    },
+    "fb_034": {
+      "experience_id": "fb_034",
+      "timestamp": "2026-10-06 18:20:00+00:00",
+      "channel": "discord",
+      "author": "maya_ux",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Any roadmap updates on Mermaid.js import and Figma component paste? Would save hours of rework.",
+      "sentiment_score": 0.75,
+      "detected_entities": [
+        "figma",
+        "mermaid",
+        "feature_request"
+      ],
+      "tags": [
+        "figma",
+        "mermaid",
+        "feature_request"
+      ],
+      "channel_metadata": {
+        "channel_name": "#ideas",
+        "reactions": {
+          "heart": 15
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_035": {
+      "experience_id": "fb_035",
+      "timestamp": "2026-10-07 09:10:00+00:00",
+      "channel": "zendesk",
+      "author": "admin@cloudtech.co",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Is there a webhook triggered whenever an architectural board is finalized or tagged as 'Approved'?",
+      "sentiment_score": 0.6,
+      "detected_entities": [
+        "webhooks",
+        "integration",
+        "enterprise"
+      ],
+      "tags": [
+        "webhooks",
+        "integration",
+        "enterprise"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4115",
+        "priority": "normal",
+        "tier": "Pro"
+      },
+      "linked_release_version": null
+    },
+    "fb_006": {
+      "experience_id": "fb_006",
+      "timestamp": "2026-10-07 13:45:00+00:00",
+      "channel": "in_app_survey",
+      "author": "dan@startupcraft.co",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Would love workspace-level role permissions (view-only vs editor). Right now guests can edit anything if shared.",
+      "sentiment_score": 0.7,
+      "detected_entities": [
+        "rbac",
+        "permissions",
+        "security"
+      ],
+      "tags": [
+        "rbac",
+        "permissions",
+        "security"
+      ],
+      "channel_metadata": {
+        "nps_score": 8,
+        "role": "Fullstack Founder"
+      },
+      "linked_release_version": null
+    },
+    "fb_007": {
+      "experience_id": "fb_007",
+      "timestamp": "2026-10-10 17:00:00+00:00",
+      "channel": "discord",
+      "author": "alex_design",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Whoa, v2.4 just dropped! Infinite canvas zoom is insane. The new WebWorker rendering feels instant on my M2 Mac.",
+      "sentiment_score": 0.85,
+      "detected_entities": [
+        "canvas",
+        "release_v2.4",
+        "praise"
+      ],
+      "tags": [
+        "canvas",
+        "release_v2.4",
+        "praise"
+      ],
+      "channel_metadata": {
+        "channel_name": "#announcements",
+        "reactions": {
+          "celebrate": 34
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_008": {
+      "experience_id": "fb_008",
+      "timestamp": "2026-10-11 11:20:00+00:00",
+      "channel": "discord",
+      "author": "kiran_sysadmin",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Anyone else noticing their Chrome tab consuming over 2GB of RAM after leaving FlowPilot open for 2 hours on v2.4?",
+      "sentiment_score": 0.15,
+      "detected_entities": [
+        "canvas",
+        "memory_leak",
+        "chrome"
+      ],
+      "tags": [
+        "canvas",
+        "memory_leak",
+        "chrome"
+      ],
+      "channel_metadata": {
+        "channel_name": "#bugs",
+        "replies": 3
+      },
+      "linked_release_version": null
+    },
+    "fb_036": {
+      "experience_id": "fb_036",
+      "timestamp": "2026-10-11 16:40:00+00:00",
+      "channel": "reddit",
+      "author": "u/chrome_watcher",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Anyone experiencing fans spinning up at max RPM after opening FlowPilot boards on v2.4? Activity monitor shows 'Google Chrome Helper (GPU)' pinned at 100%.",
+      "sentiment_score": -0.1,
+      "detected_entities": [
+        "canvas",
+        "gpu",
+        "memory_leak"
+      ],
+      "tags": [
+        "canvas",
+        "gpu",
+        "memory_leak"
+      ],
+      "channel_metadata": {
+        "subreddit": "r/chrome",
+        "upvotes": 19
+      },
+      "linked_release_version": null
+    },
+    "fb_009": {
+      "experience_id": "fb_009",
+      "timestamp": "2026-10-12 09:15:00+00:00",
+      "channel": "zendesk",
+      "author": "elena.r@hyperscale.io",
+      "account_id": "acc_hyperscale",
+      "raw_content": "Since yesterday's v2.4 update, exporting our product design board to PDF hangs at 99% for 45 seconds before failing with 'Worker timeout'. This is blocking our design review.",
+      "sentiment_score": -0.25,
+      "detected_entities": [
+        "export",
+        "pdf",
+        "worker_timeout"
+      ],
+      "tags": [
+        "export",
+        "pdf",
+        "worker_timeout"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4148",
+        "priority": "high",
+        "tier": "Growth"
+      },
+      "linked_release_version": null
+    },
+    "fb_037": {
+      "experience_id": "fb_037",
+      "timestamp": "2026-10-12 13:25:00+00:00",
+      "channel": "in_app_survey",
+      "author": "architect_bob@enterprise.com",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Board feels slightly jittery when zooming into large diagrams with 400+ nodes. Exporting to PDF failed twice today.",
+      "sentiment_score": -0.3,
+      "detected_entities": [
+        "canvas",
+        "export",
+        "performance"
+      ],
+      "tags": [
+        "canvas",
+        "export",
+        "performance"
+      ],
+      "channel_metadata": {
+        "nps_score": 5,
+        "role": "Senior Cloud Architect"
+      },
+      "linked_release_version": null
+    },
+    "fb_038": {
+      "experience_id": "fb_038",
+      "timestamp": "2026-10-13 11:05:00+00:00",
+      "channel": "discord",
+      "author": "liam_frontend",
+      "account_id": "acc_solo_devs",
+      "raw_content": "On Firefox 131, the v2.4 WebWorker crashes with NS_ERROR_OUT_OF_MEMORY during zoom-out.",
+      "sentiment_score": -0.35,
+      "detected_entities": [
+        "canvas",
+        "firefox",
+        "memory_leak"
+      ],
+      "tags": [
+        "canvas",
+        "firefox",
+        "memory_leak"
+      ],
+      "channel_metadata": {
+        "channel_name": "#bugs",
+        "replies": 5
+      },
+      "linked_release_version": null
+    },
+    "fb_010": {
+      "experience_id": "fb_010",
+      "timestamp": "2026-10-13 15:50:00+00:00",
+      "channel": "reddit",
+      "author": "u/frontend_guru_99",
+      "account_id": "acc_solo_devs",
+      "raw_content": "FlowPilot v2.4 WebWorker update has a severe WebGL buffer leak. If you have >300 shapes and zoom in/out rapidly, the browser GPU process crashes. Devs need to check deallocateBuffers().",
+      "sentiment_score": -0.4,
+      "detected_entities": [
+        "canvas",
+        "webgl",
+        "memory_leak"
+      ],
+      "tags": [
+        "canvas",
+        "webgl",
+        "memory_leak"
+      ],
+      "channel_metadata": {
+        "subreddit": "r/webdev",
+        "upvotes": 28
+      },
+      "linked_release_version": null
+    },
+    "fb_011": {
+      "experience_id": "fb_011",
+      "timestamp": "2026-10-14 10:00:00+00:00",
+      "channel": "zendesk",
+      "author": "sarah.jenkins@acmeglobal.com",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Our architects are experiencing tab crashes during all-hands system design sessions. We have 40 concurrent editors on our Core Architecture diagram and Chrome throws 'Out of Memory'. Please advise.",
+      "sentiment_score": -0.35,
+      "detected_entities": [
+        "canvas",
+        "enterprise",
+        "memory_leak"
+      ],
+      "tags": [
+        "canvas",
+        "enterprise",
+        "memory_leak"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4165",
+        "priority": "high",
+        "tier": "Enterprise Tier 1"
+      },
+      "linked_release_version": null
+    },
+    "fb_039": {
+      "experience_id": "fb_039",
+      "timestamp": "2026-10-14 17:15:00+00:00",
+      "channel": "zendesk",
+      "author": "ops@fintechscale.com",
+      "account_id": "acc_solo_devs",
+      "raw_content": "High priority: PDF export hangs at 99%. Our executives need board presentations by tomorrow 9 AM.",
+      "sentiment_score": -0.4,
+      "detected_entities": [
+        "export",
+        "pdf",
+        "priority_high"
+      ],
+      "tags": [
+        "export",
+        "pdf",
+        "priority_high"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4172",
+        "priority": "high",
+        "tier": "Pro"
+      },
+      "linked_release_version": null
+    },
+    "fb_040": {
+      "experience_id": "fb_040",
+      "timestamp": "2026-10-15 12:00:00+00:00",
+      "channel": "gong",
+      "author": "Sarah Jenkins",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Transcript snippet: 'We noticed some browser slowdowns during our quarterly planning mapping. The team loves the tool but our enterprise architects need reassurance that canvas memory stability is under control.'",
+      "sentiment_score": -0.2,
+      "detected_entities": [
+        "acme",
+        "canvas",
+        "stability_concern"
+      ],
+      "tags": [
+        "acme",
+        "canvas",
+        "stability_concern"
+      ],
+      "channel_metadata": {
+        "call_id": "gong_8892",
+        "arr": 120000,
+        "stage": "Mid-Contract Health Check"
+      },
+      "linked_release_version": null
+    },
+    "fb_012": {
+      "experience_id": "fb_012",
+      "timestamp": "2026-10-15 18:30:00+00:00",
+      "channel": "discord",
+      "author": "tanya_product",
+      "account_id": "acc_solo_devs",
+      "raw_content": "PDF export is completely dead for boards with images on v2.4. Can we please get a hotfix? We have sprint demos on Monday.",
+      "sentiment_score": -0.3,
+      "detected_entities": [
+        "export",
+        "pdf",
+        "hotfix_needed"
+      ],
+      "tags": [
+        "export",
+        "pdf",
+        "hotfix_needed"
+      ],
+      "channel_metadata": {
+        "channel_name": "#feedback",
+        "reactions": {
+          "thumbsup": 8
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_013": {
+      "experience_id": "fb_013",
+      "timestamp": "2026-10-16 20:15:00+00:00",
+      "channel": "discord",
+      "author": "dev_marcus",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Saw v2.4.1 hotfix notes mentioning memory cleanup. RAM usage is somewhat lower on simple boards now.",
+      "sentiment_score": 0.3,
+      "detected_entities": [
+        "release_v2.4.1",
+        "canvas",
+        "memory"
+      ],
+      "tags": [
+        "release_v2.4.1",
+        "canvas",
+        "memory"
+      ],
+      "channel_metadata": {
+        "channel_name": "#announcements",
+        "reactions": {
+          "pray": 5
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_014": {
+      "experience_id": "fb_014",
+      "timestamp": "2026-10-17 08:45:00+00:00",
+      "channel": "zendesk",
+      "author": "sarah.jenkins@acmeglobal.com",
+      "account_id": "acc_acme_corp",
+      "raw_content": "CRITICAL: Since this morning (after v2.4.1), our users are getting logged out of Okta SSO every 40-45 minutes without warning. When they get logged out mid-edit, unsaved diagram changes are lost! This is affecting all 350 active enterprise users. Escalate to P0 immediately.",
+      "sentiment_score": -0.85,
+      "detected_entities": [
+        "auth",
+        "sso",
+        "okta",
+        "p0_escalation",
+        "data_loss"
+      ],
+      "tags": [
+        "auth",
+        "sso",
+        "okta",
+        "p0_escalation",
+        "data_loss"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4201",
+        "priority": "urgent",
+        "tier": "Enterprise Tier 1"
+      },
+      "linked_release_version": null
+    },
+    "fb_015": {
+      "experience_id": "fb_015",
+      "timestamp": "2026-10-17 11:10:00+00:00",
+      "channel": "gong",
+      "author": "Rajiv Mehta",
+      "account_id": "acc_finovate",
+      "raw_content": "Transcript snippet: 'I am stopping the security POC evaluation today. My team lead was disconnected 3 times during a live vulnerability mapping session, and it said session token expired. If your Azure SSO can't stay connected during an active session, our CISO will not approve the $85,000 procurement.'",
+      "sentiment_score": -0.9,
+      "detected_entities": [
+        "sso",
+        "churn_risk",
+        "enterprise_poc",
+        "sales_blocker"
+      ],
+      "tags": [
+        "sso",
+        "churn_risk",
+        "enterprise_poc",
+        "sales_blocker"
+      ],
+      "channel_metadata": {
+        "call_id": "gong_8910",
+        "arr": 85000,
+        "stage": "Security POC At Risk"
+      },
+      "linked_release_version": null
+    },
+    "fb_016": {
+      "experience_id": "fb_016",
+      "timestamp": "2026-10-17 14:30:00+00:00",
+      "channel": "discord",
+      "author": "vikram_fintech",
+      "account_id": "acc_solo_devs",
+      "raw_content": "WTF happened in v2.4.1? Every 45 minutes I get kicked to the login screen and lose whatever node I was editing. Are you guys running session expiry on a timer instead of sliding window??",
+      "sentiment_score": -0.75,
+      "detected_entities": [
+        "auth",
+        "session_disconnect",
+        "data_loss"
+      ],
+      "tags": [
+        "auth",
+        "session_disconnect",
+        "data_loss"
+      ],
+      "channel_metadata": {
+        "channel_name": "#bugs",
+        "reactions": {
+          "angry": 21
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_041": {
+      "experience_id": "fb_041",
+      "timestamp": "2026-10-17 16:50:00+00:00",
+      "channel": "in_app_survey",
+      "author": "security_analyst@finovate.com",
+      "account_id": "acc_finovate",
+      "raw_content": "Kicked out to login screen while editing threat model. Lost all unsaved notes. Completely unacceptable for an enterprise product. Score: 0/10.",
+      "sentiment_score": -0.95,
+      "detected_entities": [
+        "auth",
+        "sso",
+        "data_loss",
+        "finovate"
+      ],
+      "tags": [
+        "auth",
+        "sso",
+        "data_loss",
+        "finovate"
+      ],
+      "channel_metadata": {
+        "nps_score": 0,
+        "role": "IT Security Analyst"
+      },
+      "linked_release_version": null
+    },
+    "fb_017": {
+      "experience_id": "fb_017",
+      "timestamp": "2026-10-18 09:20:00+00:00",
+      "channel": "reddit",
+      "author": "u/saas_veteran",
+      "account_id": "acc_solo_devs",
+      "raw_content": "FlowPilot went from the best diagramming tool to unusable in 1 week. Between the v2.4 memory leak crashing Chrome and v2.4.1 disconnecting SSO logins every 45 mins, our entire department is looking at going back to Lucidchart. Why aren't their regression tests catching this?",
+      "sentiment_score": -0.8,
+      "detected_entities": [
+        "churn_risk",
+        "regression",
+        "auth",
+        "memory_leak"
+      ],
+      "tags": [
+        "churn_risk",
+        "regression",
+        "auth",
+        "memory_leak"
+      ],
+      "channel_metadata": {
+        "subreddit": "r/SaaS",
+        "upvotes": 142,
+        "comments": 38
+      },
+      "linked_release_version": null
+    },
+    "fb_042": {
+      "experience_id": "fb_042",
+      "timestamp": "2026-10-18 11:30:00+00:00",
+      "channel": "zendesk",
+      "author": "it_admin@acmeglobal.com",
+      "account_id": "acc_acme_corp",
+      "raw_content": "ZD-4201 update: Our Okta SSO logs indicate FlowPilot is making auth token refresh calls every 45 minutes with invalid state parameters, triggering a forced session revocation. Fix this immediately or we will shut down the integration.",
+      "sentiment_score": -0.9,
+      "detected_entities": [
+        "auth",
+        "sso",
+        "okta",
+        "p0_escalation"
+      ],
+      "tags": [
+        "auth",
+        "sso",
+        "okta",
+        "p0_escalation"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4201-UPD",
+        "priority": "urgent",
+        "tier": "Enterprise Tier 1"
+      },
+      "linked_release_version": null
+    },
+    "fb_028": {
+      "experience_id": "fb_028",
+      "timestamp": "2026-10-18 14:20:00+00:00",
+      "channel": "zendesk",
+      "author": "timothy.b@fintechscale.com",
+      "account_id": "acc_solo_devs",
+      "raw_content": "We lost 45 minutes of customer journey mapping work because the session suddenly timed out without auto-saving to local storage. Why isn't there offline backup?",
+      "sentiment_score": -0.7,
+      "detected_entities": [
+        "auth",
+        "data_loss",
+        "offline_save"
+      ],
+      "tags": [
+        "auth",
+        "data_loss",
+        "offline_save"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4215",
+        "priority": "high",
+        "tier": "Pro"
+      },
+      "linked_release_version": null
+    },
+    "fb_018": {
+      "experience_id": "fb_018",
+      "timestamp": "2026-10-18 16:00:00+00:00",
+      "channel": "in_app_survey",
+      "author": "marcus.l@enterprise-bank.org",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Unusable. Logged me out 4 times today during an architectural review. Lost 30 minutes of diagram changes. Score: 1/10.",
+      "sentiment_score": -0.92,
+      "detected_entities": [
+        "sso",
+        "data_loss",
+        "csat_drop"
+      ],
+      "tags": [
+        "sso",
+        "data_loss",
+        "csat_drop"
+      ],
+      "channel_metadata": {
+        "nps_score": 1,
+        "role": "Principal Architect"
+      },
+      "linked_release_version": null
+    },
+    "fb_019": {
+      "experience_id": "fb_019",
+      "timestamp": "2026-10-19 10:45:00+00:00",
+      "channel": "zendesk",
+      "author": "elena.r@hyperscale.io",
+      "account_id": "acc_hyperscale",
+      "raw_content": "Our team cannot export sprint wireframes for tomorrow's client presentation. The PDF export button spins forever, and when we reload, our SSO session has timed out again.",
+      "sentiment_score": -0.6,
+      "detected_entities": [
+        "export",
+        "sso",
+        "blocking"
+      ],
+      "tags": [
+        "export",
+        "sso",
+        "blocking"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4228",
+        "priority": "urgent",
+        "tier": "Growth"
+      },
+      "linked_release_version": null
+    },
+    "fb_043": {
+      "experience_id": "fb_043",
+      "timestamp": "2026-10-19 14:10:00+00:00",
+      "channel": "reddit",
+      "author": "u/sre_daily",
+      "account_id": "acc_solo_devs",
+      "raw_content": "FlowPilot engineering shipped a hotfix (v2.4.1) that somehow tied session renewal to a fixed 45m timer without background refresh mutex. If you have 3 tabs open, tab 2 revokes tab 1's token. Classic race condition.",
+      "sentiment_score": -0.7,
+      "detected_entities": [
+        "auth",
+        "race_condition",
+        "sso"
+      ],
+      "tags": [
+        "auth",
+        "race_condition",
+        "sso"
+      ],
+      "channel_metadata": {
+        "subreddit": "r/devops",
+        "upvotes": 95
+      },
+      "linked_release_version": null
+    },
+    "fb_020": {
+      "experience_id": "fb_020",
+      "timestamp": "2026-10-20 12:00:00+00:00",
+      "channel": "gong",
+      "author": "Sarah Jenkins",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Transcript snippet: 'We have our executive team questioning our $120k FlowPilot contract. If the SSO dropouts and canvas freezing aren't permanently fixed by end of week, we will invoke our SLA breach clause and demand a full refund.'",
+      "sentiment_score": -0.85,
+      "detected_entities": [
+        "sla_breach",
+        "contract_risk",
+        "arr_120k",
+        "acme"
+      ],
+      "tags": [
+        "sla_breach",
+        "contract_risk",
+        "arr_120k",
+        "acme"
+      ],
+      "channel_metadata": {
+        "call_id": "gong_8945",
+        "arr": 120000,
+        "stage": "Contract Risk"
+      },
+      "linked_release_version": null
+    },
+    "fb_044": {
+      "experience_id": "fb_044",
+      "timestamp": "2026-10-20 17:00:00+00:00",
+      "channel": "discord",
+      "author": "chloe_dev",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Lost my diagram twice today because of the session expired modal. At least auto-save to IndexedDB or localStorage so work isn't wiped!",
+      "sentiment_score": -0.65,
+      "detected_entities": [
+        "auth",
+        "data_loss",
+        "offline_save"
+      ],
+      "tags": [
+        "auth",
+        "data_loss",
+        "offline_save"
+      ],
+      "channel_metadata": {
+        "channel_name": "#bugs",
+        "reactions": {
+          "crying": 18
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_045": {
+      "experience_id": "fb_045",
+      "timestamp": "2026-10-21 09:30:00+00:00",
+      "channel": "zendesk",
+      "author": "elena.r@hyperscale.io",
+      "account_id": "acc_hyperscale",
+      "raw_content": "Our designers are refusing to use FlowPilot until the session logout issue is fixed. Several team members had to redo their wireframes from scratch.",
+      "sentiment_score": -0.75,
+      "detected_entities": [
+        "sso",
+        "adoption_blocker",
+        "hyperscale"
+      ],
+      "tags": [
+        "sso",
+        "adoption_blocker",
+        "hyperscale"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4235",
+        "priority": "high",
+        "tier": "Growth"
+      },
+      "linked_release_version": null
+    },
+    "fb_021": {
+      "experience_id": "fb_021",
+      "timestamp": "2026-10-21 15:15:00+00:00",
+      "channel": "discord",
+      "author": "alex_design",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Love the core vision of FlowPilot, but right now I have to keep saving every 5 minutes and pray the token doesn't expire while I'm presenting to clients.",
+      "sentiment_score": -0.5,
+      "detected_entities": [
+        "auth",
+        "ux_anxiety"
+      ],
+      "tags": [
+        "auth",
+        "ux_anxiety"
+      ],
+      "channel_metadata": {
+        "channel_name": "#feedback",
+        "reactions": {
+          "sad": 14
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_029": {
+      "experience_id": "fb_029",
+      "timestamp": "2026-10-22 08:50:00+00:00",
+      "channel": "in_app_survey",
+      "author": "kiran.s@techcorp.in",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Too many disconnects during sprint planning. Please fix the session stability before adding any new fancy features.",
+      "sentiment_score": -0.45,
+      "detected_entities": [
+        "auth",
+        "stability",
+        "prioritization"
+      ],
+      "tags": [
+        "auth",
+        "stability",
+        "prioritization"
+      ],
+      "channel_metadata": {
+        "nps_score": 4,
+        "role": "Scrum Master"
+      },
+      "linked_release_version": null
+    },
+    "fb_022": {
+      "experience_id": "fb_022",
+      "timestamp": "2026-10-24 14:00:00+00:00",
+      "channel": "discord",
+      "author": "dev_marcus",
+      "account_id": "acc_solo_devs",
+      "raw_content": "v2.4.2 just dropped with a fix for the OAuth mutex lock and WebGL GPU buffer deallocation! Just tested on a 600-node board, RAM usage stayed under 350MB. Solid response from the dev team.",
+      "sentiment_score": 0.7,
+      "detected_entities": [
+        "release_v2.4.2",
+        "canvas",
+        "praise",
+        "memory_fixed"
+      ],
+      "tags": [
+        "release_v2.4.2",
+        "canvas",
+        "praise",
+        "memory_fixed"
+      ],
+      "channel_metadata": {
+        "channel_name": "#announcements",
+        "reactions": {
+          "heart": 45,
+          "tada": 28
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_023": {
+      "experience_id": "fb_023",
+      "timestamp": "2026-10-25 09:30:00+00:00",
+      "channel": "zendesk",
+      "author": "sarah.jenkins@acmeglobal.com",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Confirming that since deploying v2.4.2 yesterday morning, zero of our 350 engineers have been disconnected from Okta SSO. The offline draft persistence is also working as expected. Please close ZD-4201. Thank you for the rapid turnaround.",
+      "sentiment_score": 0.85,
+      "detected_entities": [
+        "sso",
+        "resolution",
+        "acme",
+        "praise"
+      ],
+      "tags": [
+        "sso",
+        "resolution",
+        "acme",
+        "praise"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4260",
+        "priority": "normal",
+        "tier": "Enterprise Tier 1"
+      },
+      "linked_release_version": null
+    },
+    "fb_046": {
+      "experience_id": "fb_046",
+      "timestamp": "2026-10-25 14:20:00+00:00",
+      "channel": "discord",
+      "author": "vikram_fintech",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Ran a 4-hour uninterrupted sprint on v2.4.2 today. No logouts, no tab lag. Huge thank you to the team for fixing the token race condition so fast!",
+      "sentiment_score": 0.8,
+      "detected_entities": [
+        "release_v2.4.2",
+        "auth_fixed",
+        "praise"
+      ],
+      "tags": [
+        "release_v2.4.2",
+        "auth_fixed",
+        "praise"
+      ],
+      "channel_metadata": {
+        "channel_name": "#general",
+        "reactions": {
+          "rocket": 25,
+          "clap": 19
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_024": {
+      "experience_id": "fb_024",
+      "timestamp": "2026-10-26 11:45:00+00:00",
+      "channel": "gong",
+      "author": "Rajiv Mehta",
+      "account_id": "acc_finovate",
+      "raw_content": "Transcript snippet: 'We resumed the security POC testing with v2.4.2 over the weekend. The session persistence held up across our 12-hour automated load testing. We are satisfied with the remediation and are moving ahead with legal review for the $85k contract.'",
+      "sentiment_score": 0.82,
+      "detected_entities": [
+        "sales_recovery",
+        "enterprise_poc",
+        "sso_fixed",
+        "finovate"
+      ],
+      "tags": [
+        "sales_recovery",
+        "enterprise_poc",
+        "sso_fixed",
+        "finovate"
+      ],
+      "channel_metadata": {
+        "call_id": "gong_9012",
+        "arr": 85000,
+        "stage": "Procurement Legal Review"
+      },
+      "linked_release_version": null
+    },
+    "fb_047": {
+      "experience_id": "fb_047",
+      "timestamp": "2026-10-26 15:30:00+00:00",
+      "channel": "in_app_survey",
+      "author": "security_analyst@finovate.com",
+      "account_id": "acc_finovate",
+      "raw_content": "Session stability has been rock solid over 48 hours of testing. CSAT back to 9/10. Ready for contract sign-off.",
+      "sentiment_score": 0.85,
+      "detected_entities": [
+        "csat_rebound",
+        "finovate",
+        "sso_fixed"
+      ],
+      "tags": [
+        "csat_rebound",
+        "finovate",
+        "sso_fixed"
+      ],
+      "channel_metadata": {
+        "nps_score": 9,
+        "role": "IT Security Analyst"
+      },
+      "linked_release_version": null
+    },
+    "fb_048": {
+      "experience_id": "fb_048",
+      "timestamp": "2026-10-27 10:15:00+00:00",
+      "channel": "zendesk",
+      "author": "sarah.jenkins@acmeglobal.com",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Now that v2.4.2 has resolved our enterprise stability concerns, we'd like to schedule a call with your Product team to discuss our Q1 expansion: workspace-level RBAC and audit logging for SOC2.",
+      "sentiment_score": 0.82,
+      "detected_entities": [
+        "rbac",
+        "soc2",
+        "enterprise_expansion",
+        "acme"
+      ],
+      "tags": [
+        "rbac",
+        "soc2",
+        "enterprise_expansion",
+        "acme"
+      ],
+      "channel_metadata": {
+        "ticket_id": "ZD-4280",
+        "priority": "normal",
+        "tier": "Enterprise Tier 1"
+      },
+      "linked_release_version": null
+    },
+    "fb_025": {
+      "experience_id": "fb_025",
+      "timestamp": "2026-10-27 16:20:00+00:00",
+      "channel": "in_app_survey",
+      "author": "elena.r@hyperscale.io",
+      "account_id": "acc_hyperscale",
+      "raw_content": "Export is super fast again! Now that stability is back, our top priority request remains Figma component sync and workspace RBAC. If you add that, FlowPilot is unbeatable.",
+      "sentiment_score": 0.8,
+      "detected_entities": [
+        "export_fixed",
+        "figma",
+        "rbac",
+        "feature_request"
+      ],
+      "tags": [
+        "export_fixed",
+        "figma",
+        "rbac",
+        "feature_request"
+      ],
+      "channel_metadata": {
+        "nps_score": 10,
+        "role": "Lead Product Designer"
+      },
+      "linked_release_version": null
+    },
+    "fb_026": {
+      "experience_id": "fb_026",
+      "timestamp": "2026-10-28 14:10:00+00:00",
+      "channel": "reddit",
+      "author": "u/cloud_architect_mike",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Follow up to the v2.4 debacle: v2.4.2 fixed both the WebWorker RAM leak and the auth disconnects. Credit where credit is due, the engineering postmortem was transparent and the tool is flying again.",
+      "sentiment_score": 0.78,
+      "detected_entities": [
+        "praise",
+        "recovery",
+        "stability"
+      ],
+      "tags": [
+        "praise",
+        "recovery",
+        "stability"
+      ],
+      "channel_metadata": {
+        "subreddit": "r/SaaS",
+        "upvotes": 89
+      },
+      "linked_release_version": null
+    },
+    "fb_049": {
+      "experience_id": "fb_049",
+      "timestamp": "2026-10-28 16:00:00+00:00",
+      "channel": "gong",
+      "author": "Elena Rostova",
+      "account_id": "acc_hyperscale",
+      "raw_content": "Transcript snippet: 'The v2.4.2 update completely saved our team's workflow. Export is instant and nobody gets kicked out anymore. We are expanding from 45 to 80 seats next month. Please prioritize the Figma import!'",
+      "sentiment_score": 0.88,
+      "detected_entities": [
+        "expansion",
+        "hyperscale",
+        "figma",
+        "praise"
+      ],
+      "tags": [
+        "expansion",
+        "hyperscale",
+        "figma",
+        "praise"
+      ],
+      "channel_metadata": {
+        "call_id": "gong_9045",
+        "arr": 42000,
+        "stage": "Expansion Agreement"
+      },
+      "linked_release_version": null
+    },
+    "fb_030": {
+      "experience_id": "fb_030",
+      "timestamp": "2026-10-29 10:00:00+00:00",
+      "channel": "discord",
+      "author": "sarah_j_acme",
+      "account_id": "acc_acme_corp",
+      "raw_content": "Since v2.4.2 resolved our SSO drops, our engineering management wants to discuss enterprise RBAC policies so junior engineers can't overwrite baseline production architecture diagrams.",
+      "sentiment_score": 0.8,
+      "detected_entities": [
+        "rbac",
+        "permissions",
+        "acme",
+        "feature_request"
+      ],
+      "tags": [
+        "rbac",
+        "permissions",
+        "acme",
+        "feature_request"
+      ],
+      "channel_metadata": {
+        "channel_name": "#enterprise-vip",
+        "reactions": {
+          "plus1": 11
+        }
+      },
+      "linked_release_version": null
+    },
+    "fb_050": {
+      "experience_id": "fb_050",
+      "timestamp": "2026-10-29 18:00:00+00:00",
+      "channel": "reddit",
+      "author": "u/saas_veteran",
+      "account_id": "acc_solo_devs",
+      "raw_content": "Updating my previous complaint: FlowPilot dev team pushed v2.4.2 which squashed both bugs cleanly and added offline persistence. Staying with them, great engineering turnaround.",
+      "sentiment_score": 0.82,
+      "detected_entities": [
+        "praise",
+        "turnaround",
+        "retention"
+      ],
+      "tags": [
+        "praise",
+        "turnaround",
+        "retention"
+      ],
+      "channel_metadata": {
+        "subreddit": "r/SaaS",
+        "upvotes": 112
+      },
+      "linked_release_version": null
+    },
+    "test_edge_001": {
+      "experience_id": "test_edge_001",
+      "timestamp": "2026-11-07 15:22:26.917287+00:00",
+      "channel": "discord",
+      "author": "tester\ud83d\udd25\ud83d\ude80",
+      "account_id": "acc_acme_corp",
+      "raw_content": "\ud83d\udd25\ud83d\udca5\ud83d\ude80 Complex board broke with \u20ac100k contract & Unicode: \u6f22\u5b57 and <script>alert(1)</script>",
+      "sentiment_score": -0.8,
+      "detected_entities": [],
+      "tags": [
+        "edge_case",
+        "unicode"
+      ],
+      "channel_metadata": {},
+      "linked_release_version": null
+    }
+  },
+  "entity_summaries": {
+    "acc_acme_corp": {
+      "entity_id": "acc_acme_corp",
+      "entity_name": "Acme Global",
+      "entity_type": "customer_account",
+      "tier": "Enterprise Tier 1",
+      "arr": 120000.0,
+      "total_feedback_count": 14,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-04T09:40:00+00:00",
+          "sentiment_score": 0.65,
+          "experience_id": "fb_003",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-12T13:25:00+00:00",
+          "sentiment_score": -0.3,
+          "experience_id": "fb_037",
+          "channel": "in_app_survey"
+        },
+        {
+          "timestamp": "2026-10-14T10:00:00+00:00",
+          "sentiment_score": -0.35,
+          "experience_id": "fb_011",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-15T12:00:00+00:00",
+          "sentiment_score": -0.2,
+          "experience_id": "fb_040",
+          "channel": "gong"
+        },
+        {
+          "timestamp": "2026-10-17T08:45:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_014",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-18T11:30:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_042",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-18T16:00:00+00:00",
+          "sentiment_score": -0.92,
+          "experience_id": "fb_018",
+          "channel": "in_app_survey"
+        },
+        {
+          "timestamp": "2026-10-20T12:00:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_020",
+          "channel": "gong"
+        },
+        {
+          "timestamp": "2026-10-25T09:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_023",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-27T10:15:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_048",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-29T10:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_030",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-11-07T15:13:01.241149+00:00",
+          "sentiment_score": -0.8,
+          "experience_id": "test_edge_001",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-11-07T15:13:33.447832+00:00",
+          "sentiment_score": -0.8,
+          "experience_id": "test_edge_001",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-11-07T15:22:26.917287+00:00",
+          "sentiment_score": -0.8,
+          "experience_id": "test_edge_001",
+          "channel": "discord"
+        }
+      ],
+      "current_sentiment_avg": -0.261,
+      "key_pain_points": [
+        "Board feels slightly jittery when zooming into large diagrams with 400+ nodes. Exporting to PDF failed twice today.",
+        "Our architects are experiencing tab crashes during all-hands system design sessions. We have 40 concurrent editors on ou",
+        "CRITICAL: Since this morning (after v2.4.1), our users are getting logged out of Okta SSO every 40-45 minutes without wa",
+        "ZD-4201 update: Our Okta SSO logs indicate FlowPilot is making auth token refresh calls every 45 minutes with invalid st",
+        "Unusable. Logged me out 4 times today during an architectural review. Lost 30 minutes of diagram changes. Score: 1/10.",
+        "Transcript snippet: 'We have our executive team questioning our $120k FlowPilot contract. If the SSO dropouts and canvas",
+        "\ud83d\udd25\ud83d\udca5\ud83d\ude80 Complex board broke with \u20ac100k contract & Unicode: \u6f22\u5b57 and <script>alert(1)</script>",
+        "\ud83d\udd25\ud83d\udca5\ud83d\ude80 Complex board broke with \u20ac100k contract & Unicode: \u6f22\u5b57 and <script>alert(1)</script>",
+        "\ud83d\udd25\ud83d\udca5\ud83d\ude80 Complex board broke with \u20ac100k contract & Unicode: \u6f22\u5b57 and <script>alert(1)</script>"
+      ],
+      "key_praises": [
+        "Hi Support team, our Okta SSO setup went through smoothly for our first 100 seats. Is there an admin endpoint to audit m",
+        "Confirming that since deploying v2.4.2 yesterday morning, zero of our 350 engineers have been disconnected from Okta SSO",
+        "Now that v2.4.2 has resolved our enterprise stability concerns, we'd like to schedule a call with your Product team to d",
+        "Since v2.4.2 resolved our SSO drops, our engineering management wants to discuss enterprise RBAC policies so junior engi"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:22:26.917287+00:00",
+      "active_risk_level": "CRITICAL"
+    },
+    "acc_finovate": {
+      "entity_id": "acc_finovate",
+      "entity_name": "Finovate Systems",
+      "entity_type": "customer_account",
+      "tier": "Enterprise Tier 2 (POC)",
+      "arr": 85000.0,
+      "total_feedback_count": 5,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-06T11:30:00+00:00",
+          "sentiment_score": 0.78,
+          "experience_id": "fb_005",
+          "channel": "gong"
+        },
+        {
+          "timestamp": "2026-10-17T11:10:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_015",
+          "channel": "gong"
+        },
+        {
+          "timestamp": "2026-10-17T16:50:00+00:00",
+          "sentiment_score": -0.95,
+          "experience_id": "fb_041",
+          "channel": "in_app_survey"
+        },
+        {
+          "timestamp": "2026-10-26T11:45:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_024",
+          "channel": "gong"
+        },
+        {
+          "timestamp": "2026-10-26T15:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_047",
+          "channel": "in_app_survey"
+        }
+      ],
+      "current_sentiment_avg": 0.12,
+      "key_pain_points": [
+        "Transcript snippet: 'I am stopping the security POC evaluation today. My team lead was disconnected 3 times during a liv",
+        "Kicked out to login screen while editing threat model. Lost all unsaved notes. Completely unacceptable for an enterprise"
+      ],
+      "key_praises": [
+        "Transcript snippet: 'We evaluated Lucidchart and Miro, but FlowPilot's speed in initial testing looks very promising for",
+        "Transcript snippet: 'We resumed the security POC testing with v2.4.2 over the weekend. The session persistence held up a",
+        "Session stability has been rock solid over 48 hours of testing. CSAT back to 9/10. Ready for contract sign-off."
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.151672+00:00",
+      "active_risk_level": "CRITICAL"
+    },
+    "acc_hyperscale": {
+      "entity_id": "acc_hyperscale",
+      "entity_name": "HyperScale Labs",
+      "entity_type": "customer_account",
+      "tier": "Growth / Team",
+      "arr": 24000.0,
+      "total_feedback_count": 7,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-03T14:22:00+00:00",
+          "sentiment_score": 0.75,
+          "experience_id": "fb_002",
+          "channel": "in_app_survey"
+        },
+        {
+          "timestamp": "2026-10-04T11:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_032",
+          "channel": "gong"
+        },
+        {
+          "timestamp": "2026-10-12T09:15:00+00:00",
+          "sentiment_score": -0.25,
+          "experience_id": "fb_009",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-19T10:45:00+00:00",
+          "sentiment_score": -0.6,
+          "experience_id": "fb_019",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-21T09:30:00+00:00",
+          "sentiment_score": -0.75,
+          "experience_id": "fb_045",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-27T16:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_025",
+          "channel": "in_app_survey"
+        },
+        {
+          "timestamp": "2026-10-28T16:00:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_049",
+          "channel": "gong"
+        }
+      ],
+      "current_sentiment_avg": 0.233,
+      "key_pain_points": [
+        "Our team cannot export sprint wireframes for tomorrow's client presentation. The PDF export button spins forever, and wh",
+        "Our designers are refusing to use FlowPilot until the session logout issue is fixed. Several team members had to redo th"
+      ],
+      "key_praises": [
+        "Loving the real-time cursor collaboration. Any plans to add direct Figma frame import? That would cut our handoff time b",
+        "Transcript snippet: 'Our 45 designers are really enjoying FlowPilot. The shared cursors make design crits lively. If we ",
+        "Export is super fast again! Now that stability is back, our top priority request remains Figma component sync and worksp",
+        "Transcript snippet: 'The v2.4.2 update completely saved our team's workflow. Export is instant and nobody gets kicked ou"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.180970+00:00",
+      "active_risk_level": "CRITICAL"
+    },
+    "acc_solo_devs": {
+      "entity_id": "acc_solo_devs",
+      "entity_name": "Community & Indie Pro Cohort",
+      "entity_type": "customer_account",
+      "tier": "Pro Individual",
+      "arr": 15000.0,
+      "total_feedback_count": 27,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-02T10:15:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_001",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-02T16:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_031",
+          "channel": "reddit"
+        },
+        {
+          "timestamp": "2026-10-03T18:00:00+00:00",
+          "sentiment_score": 0.6,
+          "experience_id": "fb_027",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-05T14:15:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_033",
+          "channel": "in_app_survey"
+        },
+        {
+          "timestamp": "2026-10-05T16:05:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_004",
+          "channel": "reddit"
+        },
+        {
+          "timestamp": "2026-10-06T18:20:00+00:00",
+          "sentiment_score": 0.75,
+          "experience_id": "fb_034",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-07T09:10:00+00:00",
+          "sentiment_score": 0.6,
+          "experience_id": "fb_035",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-07T13:45:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_006",
+          "channel": "in_app_survey"
+        },
+        {
+          "timestamp": "2026-10-10T17:00:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_007",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-11T11:20:00+00:00",
+          "sentiment_score": 0.15,
+          "experience_id": "fb_008",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-11T16:40:00+00:00",
+          "sentiment_score": -0.1,
+          "experience_id": "fb_036",
+          "channel": "reddit"
+        },
+        {
+          "timestamp": "2026-10-13T11:05:00+00:00",
+          "sentiment_score": -0.35,
+          "experience_id": "fb_038",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-13T15:50:00+00:00",
+          "sentiment_score": -0.4,
+          "experience_id": "fb_010",
+          "channel": "reddit"
+        },
+        {
+          "timestamp": "2026-10-14T17:15:00+00:00",
+          "sentiment_score": -0.4,
+          "experience_id": "fb_039",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-15T18:30:00+00:00",
+          "sentiment_score": -0.3,
+          "experience_id": "fb_012",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-16T20:15:00+00:00",
+          "sentiment_score": 0.3,
+          "experience_id": "fb_013",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-17T14:30:00+00:00",
+          "sentiment_score": -0.75,
+          "experience_id": "fb_016",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-18T09:20:00+00:00",
+          "sentiment_score": -0.8,
+          "experience_id": "fb_017",
+          "channel": "reddit"
+        },
+        {
+          "timestamp": "2026-10-18T14:20:00+00:00",
+          "sentiment_score": -0.7,
+          "experience_id": "fb_028",
+          "channel": "zendesk"
+        },
+        {
+          "timestamp": "2026-10-19T14:10:00+00:00",
+          "sentiment_score": -0.7,
+          "experience_id": "fb_043",
+          "channel": "reddit"
+        },
+        {
+          "timestamp": "2026-10-20T17:00:00+00:00",
+          "sentiment_score": -0.65,
+          "experience_id": "fb_044",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-21T15:15:00+00:00",
+          "sentiment_score": -0.5,
+          "experience_id": "fb_021",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-22T08:50:00+00:00",
+          "sentiment_score": -0.45,
+          "experience_id": "fb_029",
+          "channel": "in_app_survey"
+        },
+        {
+          "timestamp": "2026-10-24T14:00:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_022",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-25T14:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_046",
+          "channel": "discord"
+        },
+        {
+          "timestamp": "2026-10-28T14:10:00+00:00",
+          "sentiment_score": 0.78,
+          "experience_id": "fb_026",
+          "channel": "reddit"
+        },
+        {
+          "timestamp": "2026-10-29T18:00:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_050",
+          "channel": "reddit"
+        }
+      ],
+      "current_sentiment_avg": 0.156,
+      "key_pain_points": [
+        "On Firefox 131, the v2.4 WebWorker crashes with NS_ERROR_OUT_OF_MEMORY during zoom-out.",
+        "FlowPilot v2.4 WebWorker update has a severe WebGL buffer leak. If you have >300 shapes and zoom in/out rapidly, the bro",
+        "High priority: PDF export hangs at 99%. Our executives need board presentations by tomorrow 9 AM.",
+        "PDF export is completely dead for boards with images on v2.4. Can we please get a hotfix? We have sprint demos on Monday",
+        "WTF happened in v2.4.1? Every 45 minutes I get kicked to the login screen and lose whatever node I was editing. Are you ",
+        "FlowPilot went from the best diagramming tool to unusable in 1 week. Between the v2.4 memory leak crashing Chrome and v2",
+        "We lost 45 minutes of customer journey mapping work because the session suddenly timed out without auto-saving to local ",
+        "FlowPilot engineering shipped a hotfix (v2.4.1) that somehow tied session renewal to a fixed 45m timer without backgroun"
+      ],
+      "key_praises": [
+        "Just moved our engineering diagrams over to FlowPilot. The canvas feels super buttery smooth compared to Miro. Great job",
+        "Switched from Miro to FlowPilot for Kubernetes topology diagrams. The speed difference is night and day.",
+        "Can we get Mermaid.js syntax copy-paste support? Would be amazing to turn markdown flowcharts straight into visual board",
+        "Would love an option to export boards to SVG code or embed directly in Notion docs.",
+        "Tried FlowPilot for our AWS architecture review. Cleanest vector export I have seen in a web tool. Zero lag on our 150-n",
+        "Any roadmap updates on Mermaid.js import and Figma component paste? Would save hours of rework.",
+        "Is there a webhook triggered whenever an architectural board is finalized or tagged as 'Approved'?",
+        "Would love workspace-level role permissions (view-only vs editor). Right now guests can edit anything if shared.",
+        "Whoa, v2.4 just dropped! Infinite canvas zoom is insane. The new WebWorker rendering feels instant on my M2 Mac.",
+        "v2.4.2 just dropped with a fix for the OAuth mutex lock and WebGL GPU buffer deallocation! Just tested on a 600-node boa",
+        "Ran a 4-hour uninterrupted sprint on v2.4.2 today. No logouts, no tab lag. Huge thank you to the team for fixing the tok",
+        "Follow up to the v2.4 debacle: v2.4.2 fixed both the WebWorker RAM leak and the auth disconnects. Credit where credit is",
+        "Updating my previous complaint: FlowPilot dev team pushed v2.4.2 which squashed both bugs cleanly and added offline pers"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.197336+00:00",
+      "active_risk_level": "CRITICAL"
+    },
+    "module_canvas": {
+      "entity_id": "module_canvas",
+      "entity_name": "Canvas",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 13,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-02T10:15:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_001"
+        },
+        {
+          "timestamp": "2026-10-02T16:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_031"
+        },
+        {
+          "timestamp": "2026-10-05T16:05:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_004"
+        },
+        {
+          "timestamp": "2026-10-10T17:00:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_007"
+        },
+        {
+          "timestamp": "2026-10-11T11:20:00+00:00",
+          "sentiment_score": 0.15,
+          "experience_id": "fb_008"
+        },
+        {
+          "timestamp": "2026-10-11T16:40:00+00:00",
+          "sentiment_score": -0.1,
+          "experience_id": "fb_036"
+        },
+        {
+          "timestamp": "2026-10-12T13:25:00+00:00",
+          "sentiment_score": -0.3,
+          "experience_id": "fb_037"
+        },
+        {
+          "timestamp": "2026-10-13T11:05:00+00:00",
+          "sentiment_score": -0.35,
+          "experience_id": "fb_038"
+        },
+        {
+          "timestamp": "2026-10-13T15:50:00+00:00",
+          "sentiment_score": -0.4,
+          "experience_id": "fb_010"
+        },
+        {
+          "timestamp": "2026-10-14T10:00:00+00:00",
+          "sentiment_score": -0.35,
+          "experience_id": "fb_011"
+        },
+        {
+          "timestamp": "2026-10-15T12:00:00+00:00",
+          "sentiment_score": -0.2,
+          "experience_id": "fb_040"
+        },
+        {
+          "timestamp": "2026-10-16T20:15:00+00:00",
+          "sentiment_score": 0.3,
+          "experience_id": "fb_013"
+        },
+        {
+          "timestamp": "2026-10-24T14:00:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_022"
+        }
+      ],
+      "current_sentiment_avg": 0.219,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] Just moved our engineering diagrams over to FlowPilot. The canvas feels super buttery smooth compare",
+        "[reddit] Switched from Miro to FlowPilot for Kubernetes topology diagrams. The speed difference is night and ",
+        "[reddit] Tried FlowPilot for our AWS architecture review. Cleanest vector export I have seen in a web tool. Z",
+        "[discord] Whoa, v2.4 just dropped! Infinite canvas zoom is insane. The new WebWorker rendering feels instant o",
+        "[discord] v2.4.2 just dropped with a fix for the OAuth mutex lock and WebGL GPU buffer deallocation! Just test"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.124475+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_performance": {
+      "entity_id": "module_performance",
+      "entity_name": "Performance",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 4,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-02T10:15:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_001"
+        },
+        {
+          "timestamp": "2026-10-02T16:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_031"
+        },
+        {
+          "timestamp": "2026-10-05T16:05:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_004"
+        },
+        {
+          "timestamp": "2026-10-12T13:25:00+00:00",
+          "sentiment_score": -0.3,
+          "experience_id": "fb_037"
+        }
+      ],
+      "current_sentiment_avg": 0.562,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] Just moved our engineering diagrams over to FlowPilot. The canvas feels super buttery smooth compare",
+        "[reddit] Switched from Miro to FlowPilot for Kubernetes topology diagrams. The speed difference is night and ",
+        "[reddit] Tried FlowPilot for our AWS architecture review. Cleanest vector export I have seen in a web tool. Z"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.992910+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_praise": {
+      "entity_id": "module_praise",
+      "entity_name": "Praise",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 10,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-02T10:15:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_001"
+        },
+        {
+          "timestamp": "2026-10-02T16:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_031"
+        },
+        {
+          "timestamp": "2026-10-04T11:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_032"
+        },
+        {
+          "timestamp": "2026-10-10T17:00:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_007"
+        },
+        {
+          "timestamp": "2026-10-24T14:00:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_022"
+        },
+        {
+          "timestamp": "2026-10-25T09:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_023"
+        },
+        {
+          "timestamp": "2026-10-25T14:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_046"
+        },
+        {
+          "timestamp": "2026-10-28T14:10:00+00:00",
+          "sentiment_score": 0.78,
+          "experience_id": "fb_026"
+        },
+        {
+          "timestamp": "2026-10-28T16:00:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_049"
+        },
+        {
+          "timestamp": "2026-10-29T18:00:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_050"
+        }
+      ],
+      "current_sentiment_avg": 0.821,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] Just moved our engineering diagrams over to FlowPilot. The canvas feels super buttery smooth compare",
+        "[reddit] Switched from Miro to FlowPilot for Kubernetes topology diagrams. The speed difference is night and ",
+        "[gong] Transcript snippet: 'Our 45 designers are really enjoying FlowPilot. The shared cursors make design ",
+        "[discord] Whoa, v2.4 just dropped! Infinite canvas zoom is insane. The new WebWorker rendering feels instant o",
+        "[discord] v2.4.2 just dropped with a fix for the OAuth mutex lock and WebGL GPU buffer deallocation! Just test",
+        "[zendesk] Confirming that since deploying v2.4.2 yesterday morning, zero of our 350 engineers have been discon",
+        "[discord] Ran a 4-hour uninterrupted sprint on v2.4.2 today. No logouts, no tab lag. Huge thank you to the tea",
+        "[reddit] Follow up to the v2.4 debacle: v2.4.2 fixed both the WebWorker RAM leak and the auth disconnects. Cr",
+        "[gong] Transcript snippet: 'The v2.4.2 update completely saved our team's workflow. Export is instant and n",
+        "[reddit] Updating my previous complaint: FlowPilot dev team pushed v2.4.2 which squashed both bugs cleanly an"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.197336+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_figma": {
+      "entity_id": "module_figma",
+      "entity_name": "Figma",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 5,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-03T14:22:00+00:00",
+          "sentiment_score": 0.75,
+          "experience_id": "fb_002"
+        },
+        {
+          "timestamp": "2026-10-04T11:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_032"
+        },
+        {
+          "timestamp": "2026-10-06T18:20:00+00:00",
+          "sentiment_score": 0.75,
+          "experience_id": "fb_034"
+        },
+        {
+          "timestamp": "2026-10-27T16:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_025"
+        },
+        {
+          "timestamp": "2026-10-28T16:00:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_049"
+        }
+      ],
+      "current_sentiment_avg": 0.796,
+      "key_pain_points": [],
+      "key_praises": [
+        "[in_app_survey] Loving the real-time cursor collaboration. Any plans to add direct Figma frame import? That would cu",
+        "[gong] Transcript snippet: 'Our 45 designers are really enjoying FlowPilot. The shared cursors make design ",
+        "[discord] Any roadmap updates on Mermaid.js import and Figma component paste? Would save hours of rework.",
+        "[in_app_survey] Export is super fast again! Now that stability is back, our top priority request remains Figma compo",
+        "[gong] Transcript snippet: 'The v2.4.2 update completely saved our team's workflow. Export is instant and n"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.180970+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_integration": {
+      "entity_id": "module_integration",
+      "entity_name": "Integration",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-03T14:22:00+00:00",
+          "sentiment_score": 0.75,
+          "experience_id": "fb_002"
+        },
+        {
+          "timestamp": "2026-10-07T09:10:00+00:00",
+          "sentiment_score": 0.6,
+          "experience_id": "fb_035"
+        }
+      ],
+      "current_sentiment_avg": 0.675,
+      "key_pain_points": [],
+      "key_praises": [
+        "[in_app_survey] Loving the real-time cursor collaboration. Any plans to add direct Figma frame import? That would cu",
+        "[zendesk] Is there a webhook triggered whenever an architectural board is finalized or tagged as 'Approved'?"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.984159+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_feature_request": {
+      "entity_id": "module_feature_request",
+      "entity_name": "Feature_request",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 5,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-03T14:22:00+00:00",
+          "sentiment_score": 0.75,
+          "experience_id": "fb_002"
+        },
+        {
+          "timestamp": "2026-10-03T18:00:00+00:00",
+          "sentiment_score": 0.6,
+          "experience_id": "fb_027"
+        },
+        {
+          "timestamp": "2026-10-06T18:20:00+00:00",
+          "sentiment_score": 0.75,
+          "experience_id": "fb_034"
+        },
+        {
+          "timestamp": "2026-10-27T16:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_025"
+        },
+        {
+          "timestamp": "2026-10-29T10:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_030"
+        }
+      ],
+      "current_sentiment_avg": 0.74,
+      "key_pain_points": [],
+      "key_praises": [
+        "[in_app_survey] Loving the real-time cursor collaboration. Any plans to add direct Figma frame import? That would cu",
+        "[discord] Can we get Mermaid.js syntax copy-paste support? Would be amazing to turn markdown flowcharts straig",
+        "[discord] Any roadmap updates on Mermaid.js import and Figma component paste? Would save hours of rework.",
+        "[in_app_survey] Export is super fast again! Now that stability is back, our top priority request remains Figma compo",
+        "[discord] Since v2.4.2 resolved our SSO drops, our engineering management wants to discuss enterprise RBAC pol"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.187045+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_mermaid": {
+      "entity_id": "module_mermaid",
+      "entity_name": "Mermaid",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-03T18:00:00+00:00",
+          "sentiment_score": 0.6,
+          "experience_id": "fb_027"
+        },
+        {
+          "timestamp": "2026-10-06T18:20:00+00:00",
+          "sentiment_score": 0.75,
+          "experience_id": "fb_034"
+        }
+      ],
+      "current_sentiment_avg": 0.675,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] Can we get Mermaid.js syntax copy-paste support? Would be amazing to turn markdown flowcharts straig",
+        "[discord] Any roadmap updates on Mermaid.js import and Figma component paste? Would save hours of rework."
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.975986+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_import": {
+      "entity_id": "module_import",
+      "entity_name": "Import",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-03T18:00:00+00:00",
+          "sentiment_score": 0.6,
+          "experience_id": "fb_027"
+        }
+      ],
+      "current_sentiment_avg": 0.6,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] Can we get Mermaid.js syntax copy-paste support? Would be amazing to turn markdown flowcharts straig"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.966851+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_sso": {
+      "entity_id": "module_sso",
+      "entity_name": "Sso",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 11,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-04T09:40:00+00:00",
+          "sentiment_score": 0.65,
+          "experience_id": "fb_003"
+        },
+        {
+          "timestamp": "2026-10-06T11:30:00+00:00",
+          "sentiment_score": 0.78,
+          "experience_id": "fb_005"
+        },
+        {
+          "timestamp": "2026-10-17T08:45:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_014"
+        },
+        {
+          "timestamp": "2026-10-17T11:10:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_015"
+        },
+        {
+          "timestamp": "2026-10-17T16:50:00+00:00",
+          "sentiment_score": -0.95,
+          "experience_id": "fb_041"
+        },
+        {
+          "timestamp": "2026-10-18T11:30:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_042"
+        },
+        {
+          "timestamp": "2026-10-18T16:00:00+00:00",
+          "sentiment_score": -0.92,
+          "experience_id": "fb_018"
+        },
+        {
+          "timestamp": "2026-10-19T10:45:00+00:00",
+          "sentiment_score": -0.6,
+          "experience_id": "fb_019"
+        },
+        {
+          "timestamp": "2026-10-19T14:10:00+00:00",
+          "sentiment_score": -0.7,
+          "experience_id": "fb_043"
+        },
+        {
+          "timestamp": "2026-10-21T09:30:00+00:00",
+          "sentiment_score": -0.75,
+          "experience_id": "fb_045"
+        },
+        {
+          "timestamp": "2026-10-25T09:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_023"
+        }
+      ],
+      "current_sentiment_avg": -0.39,
+      "key_pain_points": [
+        "[zendesk] CRITICAL: Since this morning (after v2.4.1), our users are getting logged out of Okta SSO every 40-4",
+        "[gong] Transcript snippet: 'I am stopping the security POC evaluation today. My team lead was disconnected ",
+        "[in_app_survey] Kicked out to login screen while editing threat model. Lost all unsaved notes. Completely unacceptab",
+        "[zendesk] ZD-4201 update: Our Okta SSO logs indicate FlowPilot is making auth token refresh calls every 45 min",
+        "[in_app_survey] Unusable. Logged me out 4 times today during an architectural review. Lost 30 minutes of diagram cha",
+        "[zendesk] Our team cannot export sprint wireframes for tomorrow's client presentation. The PDF export button s",
+        "[reddit] FlowPilot engineering shipped a hotfix (v2.4.1) that somehow tied session renewal to a fixed 45m tim",
+        "[zendesk] Our designers are refusing to use FlowPilot until the session logout issue is fixed. Several team me"
+      ],
+      "key_praises": [
+        "[zendesk] Hi Support team, our Okta SSO setup went through smoothly for our first 100 seats. Is there an admin",
+        "[gong] Transcript snippet: 'We evaluated Lucidchart and Miro, but FlowPilot's speed in initial testing look",
+        "[zendesk] Confirming that since deploying v2.4.2 yesterday morning, zero of our 350 engineers have been discon"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.126959+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_rbac": {
+      "entity_id": "module_rbac",
+      "entity_name": "Rbac",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 6,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-04T09:40:00+00:00",
+          "sentiment_score": 0.65,
+          "experience_id": "fb_003"
+        },
+        {
+          "timestamp": "2026-10-04T11:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_032"
+        },
+        {
+          "timestamp": "2026-10-07T13:45:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_006"
+        },
+        {
+          "timestamp": "2026-10-27T10:15:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_048"
+        },
+        {
+          "timestamp": "2026-10-27T16:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_025"
+        },
+        {
+          "timestamp": "2026-10-29T10:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_030"
+        }
+      ],
+      "current_sentiment_avg": 0.762,
+      "key_pain_points": [],
+      "key_praises": [
+        "[zendesk] Hi Support team, our Okta SSO setup went through smoothly for our first 100 seats. Is there an admin",
+        "[gong] Transcript snippet: 'Our 45 designers are really enjoying FlowPilot. The shared cursors make design ",
+        "[in_app_survey] Would love workspace-level role permissions (view-only vs editor). Right now guests can edit anythin",
+        "[zendesk] Now that v2.4.2 has resolved our enterprise stability concerns, we'd like to schedule a call with yo",
+        "[in_app_survey] Export is super fast again! Now that stability is back, our top priority request remains Figma compo",
+        "[discord] Since v2.4.2 resolved our SSO drops, our engineering management wants to discuss enterprise RBAC pol"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.187045+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_admin": {
+      "entity_id": "module_admin",
+      "entity_name": "Admin",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-04T09:40:00+00:00",
+          "sentiment_score": 0.65,
+          "experience_id": "fb_003"
+        }
+      ],
+      "current_sentiment_avg": 0.65,
+      "key_pain_points": [],
+      "key_praises": [
+        "[zendesk] Hi Support team, our Okta SSO setup went through smoothly for our first 100 seats. Is there an admin"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.966851+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_hyperscale": {
+      "entity_id": "module_hyperscale",
+      "entity_name": "Hyperscale",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 3,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-04T11:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_032"
+        },
+        {
+          "timestamp": "2026-10-21T09:30:00+00:00",
+          "sentiment_score": -0.75,
+          "experience_id": "fb_045"
+        },
+        {
+          "timestamp": "2026-10-28T16:00:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_049"
+        }
+      ],
+      "current_sentiment_avg": 0.31,
+      "key_pain_points": [
+        "[zendesk] Our designers are refusing to use FlowPilot until the session logout issue is fixed. Several team me"
+      ],
+      "key_praises": [
+        "[gong] Transcript snippet: 'Our 45 designers are really enjoying FlowPilot. The shared cursors make design ",
+        "[gong] Transcript snippet: 'The v2.4.2 update completely saved our team's workflow. Export is instant and n"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.180970+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_export": {
+      "entity_id": "module_export",
+      "entity_name": "Export",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 7,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-05T14:15:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_033"
+        },
+        {
+          "timestamp": "2026-10-05T16:05:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_004"
+        },
+        {
+          "timestamp": "2026-10-12T09:15:00+00:00",
+          "sentiment_score": -0.25,
+          "experience_id": "fb_009"
+        },
+        {
+          "timestamp": "2026-10-12T13:25:00+00:00",
+          "sentiment_score": -0.3,
+          "experience_id": "fb_037"
+        },
+        {
+          "timestamp": "2026-10-14T17:15:00+00:00",
+          "sentiment_score": -0.4,
+          "experience_id": "fb_039"
+        },
+        {
+          "timestamp": "2026-10-15T18:30:00+00:00",
+          "sentiment_score": -0.3,
+          "experience_id": "fb_012"
+        },
+        {
+          "timestamp": "2026-10-19T10:45:00+00:00",
+          "sentiment_score": -0.6,
+          "experience_id": "fb_019"
+        }
+      ],
+      "current_sentiment_avg": -0.047,
+      "key_pain_points": [
+        "[zendesk] Our team cannot export sprint wireframes for tomorrow's client presentation. The PDF export button s"
+      ],
+      "key_praises": [
+        "[in_app_survey] Would love an option to export boards to SVG code or embed directly in Notion docs.",
+        "[reddit] Tried FlowPilot for our AWS architecture review. Cleanest vector export I have seen in a web tool. Z"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.079437+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_svg": {
+      "entity_id": "module_svg",
+      "entity_name": "Svg",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-05T14:15:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_033"
+        }
+      ],
+      "current_sentiment_avg": 0.7,
+      "key_pain_points": [],
+      "key_praises": [
+        "[in_app_survey] Would love an option to export boards to SVG code or embed directly in Notion docs."
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.973824+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_notion": {
+      "entity_id": "module_notion",
+      "entity_name": "Notion",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-05T14:15:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_033"
+        }
+      ],
+      "current_sentiment_avg": 0.7,
+      "key_pain_points": [],
+      "key_praises": [
+        "[in_app_survey] Would love an option to export boards to SVG code or embed directly in Notion docs."
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.973824+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_sales_pipeline": {
+      "entity_id": "module_sales_pipeline",
+      "entity_name": "Sales_pipeline",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-06T11:30:00+00:00",
+          "sentiment_score": 0.78,
+          "experience_id": "fb_005"
+        }
+      ],
+      "current_sentiment_avg": 0.78,
+      "key_pain_points": [],
+      "key_praises": [
+        "[gong] Transcript snippet: 'We evaluated Lucidchart and Miro, but FlowPilot's speed in initial testing look"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.975986+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_security": {
+      "entity_id": "module_security",
+      "entity_name": "Security",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-06T11:30:00+00:00",
+          "sentiment_score": 0.78,
+          "experience_id": "fb_005"
+        },
+        {
+          "timestamp": "2026-10-07T13:45:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_006"
+        }
+      ],
+      "current_sentiment_avg": 0.74,
+      "key_pain_points": [],
+      "key_praises": [
+        "[gong] Transcript snippet: 'We evaluated Lucidchart and Miro, but FlowPilot's speed in initial testing look",
+        "[in_app_survey] Would love workspace-level role permissions (view-only vs editor). Right now guests can edit anythin"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.986699+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_webhooks": {
+      "entity_id": "module_webhooks",
+      "entity_name": "Webhooks",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-07T09:10:00+00:00",
+          "sentiment_score": 0.6,
+          "experience_id": "fb_035"
+        }
+      ],
+      "current_sentiment_avg": 0.6,
+      "key_pain_points": [],
+      "key_praises": [
+        "[zendesk] Is there a webhook triggered whenever an architectural board is finalized or tagged as 'Approved'?"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.984159+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_enterprise": {
+      "entity_id": "module_enterprise",
+      "entity_name": "Enterprise",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-07T09:10:00+00:00",
+          "sentiment_score": 0.6,
+          "experience_id": "fb_035"
+        },
+        {
+          "timestamp": "2026-10-14T10:00:00+00:00",
+          "sentiment_score": -0.35,
+          "experience_id": "fb_011"
+        }
+      ],
+      "current_sentiment_avg": 0.125,
+      "key_pain_points": [],
+      "key_praises": [
+        "[zendesk] Is there a webhook triggered whenever an architectural board is finalized or tagged as 'Approved'?"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.011095+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_permissions": {
+      "entity_id": "module_permissions",
+      "entity_name": "Permissions",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-07T13:45:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_006"
+        },
+        {
+          "timestamp": "2026-10-29T10:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_030"
+        }
+      ],
+      "current_sentiment_avg": 0.75,
+      "key_pain_points": [],
+      "key_praises": [
+        "[in_app_survey] Would love workspace-level role permissions (view-only vs editor). Right now guests can edit anythin",
+        "[discord] Since v2.4.2 resolved our SSO drops, our engineering management wants to discuss enterprise RBAC pol"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.187045+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_release_v2.4": {
+      "entity_id": "module_release_v2.4",
+      "entity_name": "Release_v2.4",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-10T17:00:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_007"
+        }
+      ],
+      "current_sentiment_avg": 0.85,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] Whoa, v2.4 just dropped! Infinite canvas zoom is insane. The new WebWorker rendering feels instant o"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.986699+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_memory_leak": {
+      "entity_id": "module_memory_leak",
+      "entity_name": "Memory_leak",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 6,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-11T11:20:00+00:00",
+          "sentiment_score": 0.15,
+          "experience_id": "fb_008"
+        },
+        {
+          "timestamp": "2026-10-11T16:40:00+00:00",
+          "sentiment_score": -0.1,
+          "experience_id": "fb_036"
+        },
+        {
+          "timestamp": "2026-10-13T11:05:00+00:00",
+          "sentiment_score": -0.35,
+          "experience_id": "fb_038"
+        },
+        {
+          "timestamp": "2026-10-13T15:50:00+00:00",
+          "sentiment_score": -0.4,
+          "experience_id": "fb_010"
+        },
+        {
+          "timestamp": "2026-10-14T10:00:00+00:00",
+          "sentiment_score": -0.35,
+          "experience_id": "fb_011"
+        },
+        {
+          "timestamp": "2026-10-18T09:20:00+00:00",
+          "sentiment_score": -0.8,
+          "experience_id": "fb_017"
+        }
+      ],
+      "current_sentiment_avg": -0.308,
+      "key_pain_points": [
+        "[reddit] FlowPilot went from the best diagramming tool to unusable in 1 week. Between the v2.4 memory leak cr"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.060120+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_chrome": {
+      "entity_id": "module_chrome",
+      "entity_name": "Chrome",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-11T11:20:00+00:00",
+          "sentiment_score": 0.15,
+          "experience_id": "fb_008"
+        }
+      ],
+      "current_sentiment_avg": 0.15,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.992910+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_gpu": {
+      "entity_id": "module_gpu",
+      "entity_name": "Gpu",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-11T16:40:00+00:00",
+          "sentiment_score": -0.1,
+          "experience_id": "fb_036"
+        }
+      ],
+      "current_sentiment_avg": -0.1,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.992910+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_pdf": {
+      "entity_id": "module_pdf",
+      "entity_name": "Pdf",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 3,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-12T09:15:00+00:00",
+          "sentiment_score": -0.25,
+          "experience_id": "fb_009"
+        },
+        {
+          "timestamp": "2026-10-14T17:15:00+00:00",
+          "sentiment_score": -0.4,
+          "experience_id": "fb_039"
+        },
+        {
+          "timestamp": "2026-10-15T18:30:00+00:00",
+          "sentiment_score": -0.3,
+          "experience_id": "fb_012"
+        }
+      ],
+      "current_sentiment_avg": -0.317,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.027126+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_worker_timeout": {
+      "entity_id": "module_worker_timeout",
+      "entity_name": "Worker_timeout",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-12T09:15:00+00:00",
+          "sentiment_score": -0.25,
+          "experience_id": "fb_009"
+        }
+      ],
+      "current_sentiment_avg": -0.25,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:00.992910+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_firefox": {
+      "entity_id": "module_firefox",
+      "entity_name": "Firefox",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-13T11:05:00+00:00",
+          "sentiment_score": -0.35,
+          "experience_id": "fb_038"
+        }
+      ],
+      "current_sentiment_avg": -0.35,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.002850+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_webgl": {
+      "entity_id": "module_webgl",
+      "entity_name": "Webgl",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-13T15:50:00+00:00",
+          "sentiment_score": -0.4,
+          "experience_id": "fb_010"
+        }
+      ],
+      "current_sentiment_avg": -0.4,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.007318+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_priority_high": {
+      "entity_id": "module_priority_high",
+      "entity_name": "Priority_high",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-14T17:15:00+00:00",
+          "sentiment_score": -0.4,
+          "experience_id": "fb_039"
+        }
+      ],
+      "current_sentiment_avg": -0.4,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.011095+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_acme": {
+      "entity_id": "module_acme",
+      "entity_name": "Acme",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 5,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-15T12:00:00+00:00",
+          "sentiment_score": -0.2,
+          "experience_id": "fb_040"
+        },
+        {
+          "timestamp": "2026-10-20T12:00:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_020"
+        },
+        {
+          "timestamp": "2026-10-25T09:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_023"
+        },
+        {
+          "timestamp": "2026-10-27T10:15:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_048"
+        },
+        {
+          "timestamp": "2026-10-29T10:00:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_030"
+        }
+      ],
+      "current_sentiment_avg": 0.284,
+      "key_pain_points": [
+        "[gong] Transcript snippet: 'We have our executive team questioning our $120k FlowPilot contract. If the SSO"
+      ],
+      "key_praises": [
+        "[zendesk] Confirming that since deploying v2.4.2 yesterday morning, zero of our 350 engineers have been discon",
+        "[zendesk] Now that v2.4.2 has resolved our enterprise stability concerns, we'd like to schedule a call with yo",
+        "[discord] Since v2.4.2 resolved our SSO drops, our engineering management wants to discuss enterprise RBAC pol"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.187045+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_stability_concern": {
+      "entity_id": "module_stability_concern",
+      "entity_name": "Stability_concern",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-15T12:00:00+00:00",
+          "sentiment_score": -0.2,
+          "experience_id": "fb_040"
+        }
+      ],
+      "current_sentiment_avg": -0.2,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.027126+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_hotfix_needed": {
+      "entity_id": "module_hotfix_needed",
+      "entity_name": "Hotfix_needed",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-15T18:30:00+00:00",
+          "sentiment_score": -0.3,
+          "experience_id": "fb_012"
+        }
+      ],
+      "current_sentiment_avg": -0.3,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.027126+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_release_v2.4.1": {
+      "entity_id": "module_release_v2.4.1",
+      "entity_name": "Release_v2.4.1",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-16T20:15:00+00:00",
+          "sentiment_score": 0.3,
+          "experience_id": "fb_013"
+        }
+      ],
+      "current_sentiment_avg": 0.3,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.027126+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_memory": {
+      "entity_id": "module_memory",
+      "entity_name": "Memory",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-16T20:15:00+00:00",
+          "sentiment_score": 0.3,
+          "experience_id": "fb_013"
+        }
+      ],
+      "current_sentiment_avg": 0.3,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.027126+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_auth": {
+      "entity_id": "module_auth",
+      "entity_name": "Auth",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 10,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T08:45:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_014"
+        },
+        {
+          "timestamp": "2026-10-17T14:30:00+00:00",
+          "sentiment_score": -0.75,
+          "experience_id": "fb_016"
+        },
+        {
+          "timestamp": "2026-10-17T16:50:00+00:00",
+          "sentiment_score": -0.95,
+          "experience_id": "fb_041"
+        },
+        {
+          "timestamp": "2026-10-18T09:20:00+00:00",
+          "sentiment_score": -0.8,
+          "experience_id": "fb_017"
+        },
+        {
+          "timestamp": "2026-10-18T11:30:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_042"
+        },
+        {
+          "timestamp": "2026-10-18T14:20:00+00:00",
+          "sentiment_score": -0.7,
+          "experience_id": "fb_028"
+        },
+        {
+          "timestamp": "2026-10-19T14:10:00+00:00",
+          "sentiment_score": -0.7,
+          "experience_id": "fb_043"
+        },
+        {
+          "timestamp": "2026-10-20T17:00:00+00:00",
+          "sentiment_score": -0.65,
+          "experience_id": "fb_044"
+        },
+        {
+          "timestamp": "2026-10-21T15:15:00+00:00",
+          "sentiment_score": -0.5,
+          "experience_id": "fb_021"
+        },
+        {
+          "timestamp": "2026-10-22T08:50:00+00:00",
+          "sentiment_score": -0.45,
+          "experience_id": "fb_029"
+        }
+      ],
+      "current_sentiment_avg": -0.725,
+      "key_pain_points": [
+        "[zendesk] CRITICAL: Since this morning (after v2.4.1), our users are getting logged out of Okta SSO every 40-4",
+        "[discord] WTF happened in v2.4.1? Every 45 minutes I get kicked to the login screen and lose whatever node I w",
+        "[in_app_survey] Kicked out to login screen while editing threat model. Lost all unsaved notes. Completely unacceptab",
+        "[reddit] FlowPilot went from the best diagramming tool to unusable in 1 week. Between the v2.4 memory leak cr",
+        "[zendesk] ZD-4201 update: Our Okta SSO logs indicate FlowPilot is making auth token refresh calls every 45 min",
+        "[zendesk] We lost 45 minutes of customer journey mapping work because the session suddenly timed out without a",
+        "[reddit] FlowPilot engineering shipped a hotfix (v2.4.1) that somehow tied session renewal to a fixed 45m tim",
+        "[discord] Lost my diagram twice today because of the session expired modal. At least auto-save to IndexedDB or",
+        "[discord] Love the core vision of FlowPilot, but right now I have to keep saving every 5 minutes and pray the "
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.110139+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_okta": {
+      "entity_id": "module_okta",
+      "entity_name": "Okta",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T08:45:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_014"
+        },
+        {
+          "timestamp": "2026-10-18T11:30:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_042"
+        }
+      ],
+      "current_sentiment_avg": -0.875,
+      "key_pain_points": [
+        "[zendesk] CRITICAL: Since this morning (after v2.4.1), our users are getting logged out of Okta SSO every 40-4",
+        "[zendesk] ZD-4201 update: Our Okta SSO logs indicate FlowPilot is making auth token refresh calls every 45 min"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.060120+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_p0_escalation": {
+      "entity_id": "module_p0_escalation",
+      "entity_name": "P0_escalation",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T08:45:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_014"
+        },
+        {
+          "timestamp": "2026-10-18T11:30:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_042"
+        }
+      ],
+      "current_sentiment_avg": -0.875,
+      "key_pain_points": [
+        "[zendesk] CRITICAL: Since this morning (after v2.4.1), our users are getting logged out of Okta SSO every 40-4",
+        "[zendesk] ZD-4201 update: Our Okta SSO logs indicate FlowPilot is making auth token refresh calls every 45 min"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.060120+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_data_loss": {
+      "entity_id": "module_data_loss",
+      "entity_name": "Data_loss",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 6,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T08:45:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_014"
+        },
+        {
+          "timestamp": "2026-10-17T14:30:00+00:00",
+          "sentiment_score": -0.75,
+          "experience_id": "fb_016"
+        },
+        {
+          "timestamp": "2026-10-17T16:50:00+00:00",
+          "sentiment_score": -0.95,
+          "experience_id": "fb_041"
+        },
+        {
+          "timestamp": "2026-10-18T14:20:00+00:00",
+          "sentiment_score": -0.7,
+          "experience_id": "fb_028"
+        },
+        {
+          "timestamp": "2026-10-18T16:00:00+00:00",
+          "sentiment_score": -0.92,
+          "experience_id": "fb_018"
+        },
+        {
+          "timestamp": "2026-10-20T17:00:00+00:00",
+          "sentiment_score": -0.65,
+          "experience_id": "fb_044"
+        }
+      ],
+      "current_sentiment_avg": -0.803,
+      "key_pain_points": [
+        "[zendesk] CRITICAL: Since this morning (after v2.4.1), our users are getting logged out of Okta SSO every 40-4",
+        "[discord] WTF happened in v2.4.1? Every 45 minutes I get kicked to the login screen and lose whatever node I w",
+        "[in_app_survey] Kicked out to login screen while editing threat model. Lost all unsaved notes. Completely unacceptab",
+        "[zendesk] We lost 45 minutes of customer journey mapping work because the session suddenly timed out without a",
+        "[in_app_survey] Unusable. Logged me out 4 times today during an architectural review. Lost 30 minutes of diagram cha",
+        "[discord] Lost my diagram twice today because of the session expired modal. At least auto-save to IndexedDB or"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.094935+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_churn_risk": {
+      "entity_id": "module_churn_risk",
+      "entity_name": "Churn_risk",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T11:10:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_015"
+        },
+        {
+          "timestamp": "2026-10-18T09:20:00+00:00",
+          "sentiment_score": -0.8,
+          "experience_id": "fb_017"
+        }
+      ],
+      "current_sentiment_avg": -0.85,
+      "key_pain_points": [
+        "[gong] Transcript snippet: 'I am stopping the security POC evaluation today. My team lead was disconnected ",
+        "[reddit] FlowPilot went from the best diagramming tool to unusable in 1 week. Between the v2.4 memory leak cr"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.060120+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_enterprise_poc": {
+      "entity_id": "module_enterprise_poc",
+      "entity_name": "Enterprise_poc",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T11:10:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_015"
+        },
+        {
+          "timestamp": "2026-10-26T11:45:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_024"
+        }
+      ],
+      "current_sentiment_avg": -0.04,
+      "key_pain_points": [
+        "[gong] Transcript snippet: 'I am stopping the security POC evaluation today. My team lead was disconnected "
+      ],
+      "key_praises": [
+        "[gong] Transcript snippet: 'We resumed the security POC testing with v2.4.2 over the weekend. The session p"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.143236+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_sales_blocker": {
+      "entity_id": "module_sales_blocker",
+      "entity_name": "Sales_blocker",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T11:10:00+00:00",
+          "sentiment_score": -0.9,
+          "experience_id": "fb_015"
+        }
+      ],
+      "current_sentiment_avg": -0.9,
+      "key_pain_points": [
+        "[gong] Transcript snippet: 'I am stopping the security POC evaluation today. My team lead was disconnected "
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.043748+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_session_disconnect": {
+      "entity_id": "module_session_disconnect",
+      "entity_name": "Session_disconnect",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T14:30:00+00:00",
+          "sentiment_score": -0.75,
+          "experience_id": "fb_016"
+        }
+      ],
+      "current_sentiment_avg": -0.75,
+      "key_pain_points": [
+        "[discord] WTF happened in v2.4.1? Every 45 minutes I get kicked to the login screen and lose whatever node I w"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.043748+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_finovate": {
+      "entity_id": "module_finovate",
+      "entity_name": "Finovate",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 3,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-17T16:50:00+00:00",
+          "sentiment_score": -0.95,
+          "experience_id": "fb_041"
+        },
+        {
+          "timestamp": "2026-10-26T11:45:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_024"
+        },
+        {
+          "timestamp": "2026-10-26T15:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_047"
+        }
+      ],
+      "current_sentiment_avg": 0.24,
+      "key_pain_points": [
+        "[in_app_survey] Kicked out to login screen while editing threat model. Lost all unsaved notes. Completely unacceptab"
+      ],
+      "key_praises": [
+        "[gong] Transcript snippet: 'We resumed the security POC testing with v2.4.2 over the weekend. The session p",
+        "[in_app_survey] Session stability has been rock solid over 48 hours of testing. CSAT back to 9/10. Ready for contrac"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.151672+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_regression": {
+      "entity_id": "module_regression",
+      "entity_name": "Regression",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-18T09:20:00+00:00",
+          "sentiment_score": -0.8,
+          "experience_id": "fb_017"
+        }
+      ],
+      "current_sentiment_avg": -0.8,
+      "key_pain_points": [
+        "[reddit] FlowPilot went from the best diagramming tool to unusable in 1 week. Between the v2.4 memory leak cr"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.060120+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_offline_save": {
+      "entity_id": "module_offline_save",
+      "entity_name": "Offline_save",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-18T14:20:00+00:00",
+          "sentiment_score": -0.7,
+          "experience_id": "fb_028"
+        },
+        {
+          "timestamp": "2026-10-20T17:00:00+00:00",
+          "sentiment_score": -0.65,
+          "experience_id": "fb_044"
+        }
+      ],
+      "current_sentiment_avg": -0.675,
+      "key_pain_points": [
+        "[zendesk] We lost 45 minutes of customer journey mapping work because the session suddenly timed out without a",
+        "[discord] Lost my diagram twice today because of the session expired modal. At least auto-save to IndexedDB or"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.094935+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_csat_drop": {
+      "entity_id": "module_csat_drop",
+      "entity_name": "Csat_drop",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-18T16:00:00+00:00",
+          "sentiment_score": -0.92,
+          "experience_id": "fb_018"
+        }
+      ],
+      "current_sentiment_avg": -0.92,
+      "key_pain_points": [
+        "[in_app_survey] Unusable. Logged me out 4 times today during an architectural review. Lost 30 minutes of diagram cha"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.073899+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_blocking": {
+      "entity_id": "module_blocking",
+      "entity_name": "Blocking",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-19T10:45:00+00:00",
+          "sentiment_score": -0.6,
+          "experience_id": "fb_019"
+        }
+      ],
+      "current_sentiment_avg": -0.6,
+      "key_pain_points": [
+        "[zendesk] Our team cannot export sprint wireframes for tomorrow's client presentation. The PDF export button s"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.079437+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_race_condition": {
+      "entity_id": "module_race_condition",
+      "entity_name": "Race_condition",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-19T14:10:00+00:00",
+          "sentiment_score": -0.7,
+          "experience_id": "fb_043"
+        }
+      ],
+      "current_sentiment_avg": -0.7,
+      "key_pain_points": [
+        "[reddit] FlowPilot engineering shipped a hotfix (v2.4.1) that somehow tied session renewal to a fixed 45m tim"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.084456+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_sla_breach": {
+      "entity_id": "module_sla_breach",
+      "entity_name": "Sla_breach",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-20T12:00:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_020"
+        }
+      ],
+      "current_sentiment_avg": -0.85,
+      "key_pain_points": [
+        "[gong] Transcript snippet: 'We have our executive team questioning our $120k FlowPilot contract. If the SSO"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.090644+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_contract_risk": {
+      "entity_id": "module_contract_risk",
+      "entity_name": "Contract_risk",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-20T12:00:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_020"
+        }
+      ],
+      "current_sentiment_avg": -0.85,
+      "key_pain_points": [
+        "[gong] Transcript snippet: 'We have our executive team questioning our $120k FlowPilot contract. If the SSO"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.090644+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_arr_120k": {
+      "entity_id": "module_arr_120k",
+      "entity_name": "Arr_120k",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-20T12:00:00+00:00",
+          "sentiment_score": -0.85,
+          "experience_id": "fb_020"
+        }
+      ],
+      "current_sentiment_avg": -0.85,
+      "key_pain_points": [
+        "[gong] Transcript snippet: 'We have our executive team questioning our $120k FlowPilot contract. If the SSO"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.090644+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_adoption_blocker": {
+      "entity_id": "module_adoption_blocker",
+      "entity_name": "Adoption_blocker",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-21T09:30:00+00:00",
+          "sentiment_score": -0.75,
+          "experience_id": "fb_045"
+        }
+      ],
+      "current_sentiment_avg": -0.75,
+      "key_pain_points": [
+        "[zendesk] Our designers are refusing to use FlowPilot until the session logout issue is fixed. Several team me"
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.105317+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_ux_anxiety": {
+      "entity_id": "module_ux_anxiety",
+      "entity_name": "Ux_anxiety",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-21T15:15:00+00:00",
+          "sentiment_score": -0.5,
+          "experience_id": "fb_021"
+        }
+      ],
+      "current_sentiment_avg": -0.5,
+      "key_pain_points": [
+        "[discord] Love the core vision of FlowPilot, but right now I have to keep saving every 5 minutes and pray the "
+      ],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.110139+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_stability": {
+      "entity_id": "module_stability",
+      "entity_name": "Stability",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-22T08:50:00+00:00",
+          "sentiment_score": -0.45,
+          "experience_id": "fb_029"
+        },
+        {
+          "timestamp": "2026-10-28T14:10:00+00:00",
+          "sentiment_score": 0.78,
+          "experience_id": "fb_026"
+        }
+      ],
+      "current_sentiment_avg": 0.165,
+      "key_pain_points": [],
+      "key_praises": [
+        "[reddit] Follow up to the v2.4 debacle: v2.4.2 fixed both the WebWorker RAM leak and the auth disconnects. Cr"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.172292+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_prioritization": {
+      "entity_id": "module_prioritization",
+      "entity_name": "Prioritization",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-22T08:50:00+00:00",
+          "sentiment_score": -0.45,
+          "experience_id": "fb_029"
+        }
+      ],
+      "current_sentiment_avg": -0.45,
+      "key_pain_points": [],
+      "key_praises": [],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.110139+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_release_v2.4.2": {
+      "entity_id": "module_release_v2.4.2",
+      "entity_name": "Release_v2.4.2",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-24T14:00:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_022"
+        },
+        {
+          "timestamp": "2026-10-25T14:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_046"
+        }
+      ],
+      "current_sentiment_avg": 0.75,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] v2.4.2 just dropped with a fix for the OAuth mutex lock and WebGL GPU buffer deallocation! Just test",
+        "[discord] Ran a 4-hour uninterrupted sprint on v2.4.2 today. No logouts, no tab lag. Huge thank you to the tea"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.137733+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_memory_fixed": {
+      "entity_id": "module_memory_fixed",
+      "entity_name": "Memory_fixed",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-24T14:00:00+00:00",
+          "sentiment_score": 0.7,
+          "experience_id": "fb_022"
+        }
+      ],
+      "current_sentiment_avg": 0.7,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] v2.4.2 just dropped with a fix for the OAuth mutex lock and WebGL GPU buffer deallocation! Just test"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.124475+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_resolution": {
+      "entity_id": "module_resolution",
+      "entity_name": "Resolution",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-25T09:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_023"
+        }
+      ],
+      "current_sentiment_avg": 0.85,
+      "key_pain_points": [],
+      "key_praises": [
+        "[zendesk] Confirming that since deploying v2.4.2 yesterday morning, zero of our 350 engineers have been discon"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.126959+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_auth_fixed": {
+      "entity_id": "module_auth_fixed",
+      "entity_name": "Auth_fixed",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-25T14:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_046"
+        }
+      ],
+      "current_sentiment_avg": 0.8,
+      "key_pain_points": [],
+      "key_praises": [
+        "[discord] Ran a 4-hour uninterrupted sprint on v2.4.2 today. No logouts, no tab lag. Huge thank you to the tea"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.137733+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_sales_recovery": {
+      "entity_id": "module_sales_recovery",
+      "entity_name": "Sales_recovery",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-26T11:45:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_024"
+        }
+      ],
+      "current_sentiment_avg": 0.82,
+      "key_pain_points": [],
+      "key_praises": [
+        "[gong] Transcript snippet: 'We resumed the security POC testing with v2.4.2 over the weekend. The session p"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.143236+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_sso_fixed": {
+      "entity_id": "module_sso_fixed",
+      "entity_name": "Sso_fixed",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 2,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-26T11:45:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_024"
+        },
+        {
+          "timestamp": "2026-10-26T15:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_047"
+        }
+      ],
+      "current_sentiment_avg": 0.835,
+      "key_pain_points": [],
+      "key_praises": [
+        "[gong] Transcript snippet: 'We resumed the security POC testing with v2.4.2 over the weekend. The session p",
+        "[in_app_survey] Session stability has been rock solid over 48 hours of testing. CSAT back to 9/10. Ready for contrac"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.151672+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_csat_rebound": {
+      "entity_id": "module_csat_rebound",
+      "entity_name": "Csat_rebound",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-26T15:30:00+00:00",
+          "sentiment_score": 0.85,
+          "experience_id": "fb_047"
+        }
+      ],
+      "current_sentiment_avg": 0.85,
+      "key_pain_points": [],
+      "key_praises": [
+        "[in_app_survey] Session stability has been rock solid over 48 hours of testing. CSAT back to 9/10. Ready for contrac"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.151672+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_soc2": {
+      "entity_id": "module_soc2",
+      "entity_name": "Soc2",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-27T10:15:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_048"
+        }
+      ],
+      "current_sentiment_avg": 0.82,
+      "key_pain_points": [],
+      "key_praises": [
+        "[zendesk] Now that v2.4.2 has resolved our enterprise stability concerns, we'd like to schedule a call with yo"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.159176+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_enterprise_expansion": {
+      "entity_id": "module_enterprise_expansion",
+      "entity_name": "Enterprise_expansion",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-27T10:15:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_048"
+        }
+      ],
+      "current_sentiment_avg": 0.82,
+      "key_pain_points": [],
+      "key_praises": [
+        "[zendesk] Now that v2.4.2 has resolved our enterprise stability concerns, we'd like to schedule a call with yo"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.159176+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_export_fixed": {
+      "entity_id": "module_export_fixed",
+      "entity_name": "Export_fixed",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-27T16:20:00+00:00",
+          "sentiment_score": 0.8,
+          "experience_id": "fb_025"
+        }
+      ],
+      "current_sentiment_avg": 0.8,
+      "key_pain_points": [],
+      "key_praises": [
+        "[in_app_survey] Export is super fast again! Now that stability is back, our top priority request remains Figma compo"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.160376+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_recovery": {
+      "entity_id": "module_recovery",
+      "entity_name": "Recovery",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-28T14:10:00+00:00",
+          "sentiment_score": 0.78,
+          "experience_id": "fb_026"
+        }
+      ],
+      "current_sentiment_avg": 0.78,
+      "key_pain_points": [],
+      "key_praises": [
+        "[reddit] Follow up to the v2.4 debacle: v2.4.2 fixed both the WebWorker RAM leak and the auth disconnects. Cr"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.172292+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_expansion": {
+      "entity_id": "module_expansion",
+      "entity_name": "Expansion",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-28T16:00:00+00:00",
+          "sentiment_score": 0.88,
+          "experience_id": "fb_049"
+        }
+      ],
+      "current_sentiment_avg": 0.88,
+      "key_pain_points": [],
+      "key_praises": [
+        "[gong] Transcript snippet: 'The v2.4.2 update completely saved our team's workflow. Export is instant and n"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.180970+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_turnaround": {
+      "entity_id": "module_turnaround",
+      "entity_name": "Turnaround",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-29T18:00:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_050"
+        }
+      ],
+      "current_sentiment_avg": 0.82,
+      "key_pain_points": [],
+      "key_praises": [
+        "[reddit] Updating my previous complaint: FlowPilot dev team pushed v2.4.2 which squashed both bugs cleanly an"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.197336+00:00",
+      "active_risk_level": "LOW"
+    },
+    "module_retention": {
+      "entity_id": "module_retention",
+      "entity_name": "Retention",
+      "entity_type": "product_module",
+      "tier": null,
+      "arr": null,
+      "total_feedback_count": 1,
+      "sentiment_history": [
+        {
+          "timestamp": "2026-10-29T18:00:00+00:00",
+          "sentiment_score": 0.82,
+          "experience_id": "fb_050"
+        }
+      ],
+      "current_sentiment_avg": 0.82,
+      "key_pain_points": [],
+      "key_praises": [
+        "[reddit] Updating my previous complaint: FlowPilot dev team pushed v2.4.2 which squashed both bugs cleanly an"
+      ],
+      "feature_requests": [],
+      "last_updated": "2026-11-07 15:13:01.197336+00:00",
+      "active_risk_level": "LOW"
+    }
+  },
+  "evolving_beliefs": {
+    "belief_canvas_stability": {
+      "belief_id": "belief_canvas_stability",
+      "topic": "Canvas Engine Stability",
+      "hypothesis_statement": "Canvas is fast and stable for large-scale enterprise diagramming.",
+      "confidence": 0.85,
+      "supporting_evidence_ids": [
+        "fb_001"
+      ],
+      "contradicting_evidence_ids": [
+        "fb_037",
+        "fb_038",
+        "fb_010",
+        "fb_011"
+      ],
+      "evolution_history": [],
+      "last_revised": "2026-11-07 15:13:00.959452+00:00",
+      "status": "superseded",
+      "superseded_by": "belief_canvas_stability_v2_leak"
+    },
+    "belief_auth_sso": {
+      "belief_id": "belief_auth_sso",
+      "topic": "Enterprise SSO Resilience",
+      "hypothesis_statement": "Enterprise SAML/Okta SSO session renewal is resilient.",
+      "confidence": 0.75,
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "evolution_history": [],
+      "last_revised": "2026-11-07 15:13:00.966851+00:00",
+      "status": "refuted",
+      "superseded_by": "belief_sso_crisis_v241"
+    },
+    "belief_canvas_stability_v2_leak": {
+      "belief_id": "belief_canvas_stability_v2_leak",
+      "topic": "Canvas Engine Stability",
+      "hypothesis_statement": "v2.4 WebWorker introduces GPU/WebGL memory leak and out-of-memory crashes on boards with >300 nodes.",
+      "confidence": 0.92,
+      "supporting_evidence_ids": [
+        "fb_037",
+        "fb_038",
+        "fb_010"
+      ],
+      "contradicting_evidence_ids": [],
+      "evolution_history": [],
+      "last_revised": "2026-11-07 15:13:01.007318+00:00",
+      "status": "resolved",
+      "superseded_by": null
+    },
+    "belief_sso_crisis_v241": {
+      "belief_id": "belief_sso_crisis_v241",
+      "topic": "Enterprise SSO Resilience",
+      "hypothesis_statement": "v2.4.1 token refresh timer (45m) lacks mutex locks across multi-tab sessions, causing catastrophic logouts and data loss for enterprise accounts.",
+      "confidence": 0.98,
+      "supporting_evidence_ids": [
+        "fb_042"
+      ],
+      "contradicting_evidence_ids": [],
+      "evolution_history": [],
+      "last_revised": "2026-11-07 15:13:01.060120+00:00",
+      "status": "resolved",
+      "superseded_by": null
+    },
+    "belief_canvas_stability_v3_stabilized": {
+      "belief_id": "belief_canvas_stability_v3_stabilized",
+      "topic": "Canvas Engine Stability",
+      "hypothesis_statement": "v2.4.2 patch successfully resolved WebGL buffer deallocation and restored sub-350MB RAM performance.",
+      "confidence": 0.95,
+      "supporting_evidence_ids": [
+        "fb_022"
+      ],
+      "contradicting_evidence_ids": [],
+      "evolution_history": [],
+      "last_revised": "2026-11-07 15:13:01.124475+00:00",
+      "status": "active",
+      "superseded_by": null
+    },
+    "belief_sso_stabilized_v242": {
+      "belief_id": "belief_sso_stabilized_v242",
+      "topic": "Enterprise SSO Resilience",
+      "hypothesis_statement": "v2.4.2 WebLock distributed mutex and offline draft recovery restored 100% session uptime for Okta/Azure enterprise clients.",
+      "confidence": 0.96,
+      "supporting_evidence_ids": [
+        "fb_023"
+      ],
+      "contradicting_evidence_ids": [],
+      "evolution_history": [],
+      "last_revised": "2026-11-07 15:13:01.126959+00:00",
+      "status": "active",
+      "superseded_by": null
+    }
+  }
+}

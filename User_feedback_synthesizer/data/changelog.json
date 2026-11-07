@@ -1,0 +1,74 @@
+[
+  {
+    "version": "v2.3.0",
+    "release_date": "2026-10-01T09:00:00Z",
+    "title": "Autumn Performance Baseline",
+    "summary": "Stable baseline release featuring standard canvas rendering, single-threaded export, and legacy session-based authentication.",
+    "affected_modules": [
+      "auth",
+      "canvas",
+      "export"
+    ],
+    "changes": [
+      "Optimized database index for project loading",
+      "Standard canvas DOM renderer with 60fps cap",
+      "Basic PDF and PNG export utilities",
+      "Standard cookie session authentication"
+    ],
+    "known_risks": "Canvas performance degrades slightly on boards with >500 elements."
+  },
+  {
+    "version": "v2.4.0",
+    "release_date": "2026-10-10T14:30:00Z",
+    "title": "Next-Gen WebWorker Async Canvas Engine",
+    "summary": "Major architectural overhaul offloading canvas rendering calculations to background WebWorkers for infinite scaling.",
+    "affected_modules": [
+      "canvas",
+      "export",
+      "performance"
+    ],
+    "changes": [
+      "Migrated canvas transformation calculations to DedicatedWorkerGlobalScope",
+      "Introduced hardware-accelerated WebGL viewport",
+      "Added multi-user cursor broadcasting over WebSockets",
+      "Redesigned node inspector sidebar"
+    ],
+    "known_risks": "High memory consumption on prolonged editing sessions if WebGL buffer is not deallocated."
+  },
+  {
+    "version": "v2.4.1",
+    "release_date": "2026-10-16T18:00:00Z",
+    "title": "Canvas Memory Hotfix & Auth Refresh Interval Tuning",
+    "summary": "Emergency hotfix to patch client RAM leaks in WebWorker, along with enterprise SSO token refresh interval adjustments.",
+    "affected_modules": [
+      "canvas",
+      "auth",
+      "sso"
+    ],
+    "changes": [
+      "Enforced aggressive canvas node garbage collection on zoom/pan",
+      "Shortened enterprise Okta/SAML OAuth token refresh check from 4h to 45m",
+      "Added memory warning toast when tab exceeds 1.5GB RAM"
+    ],
+    "known_risks": "Short token check introduces race condition when multiple tabs renew token concurrently without mutex lock."
+  },
+  {
+    "version": "v2.4.2",
+    "release_date": "2026-10-24T11:15:00Z",
+    "title": "OAuth Mutex Fix & Canvas WebGL Stabilization",
+    "summary": "Comprehensive stability update resolving OAuth token refresh race conditions and WebGL context loss.",
+    "affected_modules": [
+      "auth",
+      "sso",
+      "canvas",
+      "export"
+    ],
+    "changes": [
+      "Implemented distributed WebLock/mutex for single-tab OAuth renewal",
+      "Fixed GPU buffer deallocation in Canvas worker upon node deletion",
+      "Added automatic offline draft persistence if connection drops",
+      "Re-enabled high-resolution vector PDF export"
+    ],
+    "known_risks": "Minimal. Verified in staging across Chrome 124, Safari 18, and Firefox ESR."
+  }
+]
